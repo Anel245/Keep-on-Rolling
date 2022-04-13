@@ -46,10 +46,10 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Camera"",
-                    ""type"": ""Button"",
+                    ""name"": ""Look Around"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""5a85611c-47c8-40d7-9173-a2eee5c413df"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -125,11 +125,22 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4ffbb2cc-9513-49c1-b11f-6a88b9901b41"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Camera"",
+                    ""action"": ""Look Around"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c1e2f1f-89b2-4016-b8c4-b92b9febfa00"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look Around"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -142,7 +153,7 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
         m_Ball_Controls = asset.FindActionMap("Ball_Controls", throwIfNotFound: true);
         m_Ball_Controls_Movement = m_Ball_Controls.FindAction("Movement", throwIfNotFound: true);
         m_Ball_Controls_Jump = m_Ball_Controls.FindAction("Jump", throwIfNotFound: true);
-        m_Ball_Controls_Camera = m_Ball_Controls.FindAction("Camera", throwIfNotFound: true);
+        m_Ball_Controls_LookAround = m_Ball_Controls.FindAction("Look Around", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,14 +215,14 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
     private IBall_ControlsActions m_Ball_ControlsActionsCallbackInterface;
     private readonly InputAction m_Ball_Controls_Movement;
     private readonly InputAction m_Ball_Controls_Jump;
-    private readonly InputAction m_Ball_Controls_Camera;
+    private readonly InputAction m_Ball_Controls_LookAround;
     public struct Ball_ControlsActions
     {
         private @Ball_Controlls m_Wrapper;
         public Ball_ControlsActions(@Ball_Controlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Ball_Controls_Movement;
         public InputAction @Jump => m_Wrapper.m_Ball_Controls_Jump;
-        public InputAction @Camera => m_Wrapper.m_Ball_Controls_Camera;
+        public InputAction @LookAround => m_Wrapper.m_Ball_Controls_LookAround;
         public InputActionMap Get() { return m_Wrapper.m_Ball_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -227,9 +238,9 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnJump;
-                @Camera.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnCamera;
-                @Camera.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnCamera;
-                @Camera.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnCamera;
+                @LookAround.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookAround;
+                @LookAround.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookAround;
+                @LookAround.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookAround;
             }
             m_Wrapper.m_Ball_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -240,9 +251,9 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Camera.started += instance.OnCamera;
-                @Camera.performed += instance.OnCamera;
-                @Camera.canceled += instance.OnCamera;
+                @LookAround.started += instance.OnLookAround;
+                @LookAround.performed += instance.OnLookAround;
+                @LookAround.canceled += instance.OnLookAround;
             }
         }
     }
@@ -251,6 +262,6 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnCamera(InputAction.CallbackContext context);
+        void OnLookAround(InputAction.CallbackContext context);
     }
 }

@@ -24,10 +24,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Camera",
-                    "type": "Button",
+                    "name": "Look Around",
+                    "type": "PassThrough",
                     "id": "5a85611c-47c8-40d7-9173-a2eee5c413df",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -103,11 +103,22 @@
                 {
                     "name": "",
                     "id": "4ffbb2cc-9513-49c1-b11f-6a88b9901b41",
-                    "path": "",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Camera",
+                    "action": "Look Around",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c1e2f1f-89b2-4016-b8c4-b92b9febfa00",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look Around",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

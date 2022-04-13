@@ -114,13 +114,8 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         }
     }
 
-    public void OnLookaround(InputAction.CallbackContext context)
+    public void OnLookAround(InputAction.CallbackContext context)
     {
 
-    }
-
-    public void OnCamera(InputAction.CallbackContext context)
-    {
-        throw new System.NotImplementedException();
     }
 }
