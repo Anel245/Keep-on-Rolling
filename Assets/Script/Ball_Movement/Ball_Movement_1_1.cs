@@ -18,6 +18,9 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     private bool Grounded;
     private float Colliding_Objects;
+    private float GroundDrag;
+    private float AirDrag;
+    public float AirDragRate;
 
     public float jumpForce = 10f;
 
@@ -33,6 +36,8 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         GroundSpeed = Speed;
         AirSpeed = GroundSpeed * AirSpeedControl;
         Ball_RB = this.GetComponent<Rigidbody>();
+        GroundDrag = Ball_RB.drag;
+        AirDrag = GroundDrag * AirDragRate;
 
         if (controlls == null)
         {
@@ -43,7 +48,7 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     }
     void FixedUpdate()
     {
-        // Is the ball grounded, switching between Airspeed and Groundspeed
+        // Is the ball grounded, switching between Airspeed and Groundspeed, switching between Airdrag and Grounddrag
 
         if (Colliding_Objects > 0)
         {
@@ -57,10 +62,12 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         if (Grounded == true)
         {
             Speed = GroundSpeed;
+            Ball_RB.drag = GroundDrag;
         }
         else
         {
             Speed = AirSpeed;
+            Ball_RB.drag = AirDrag;
         }
 
         // Ball movement
