@@ -330,8 +330,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126974084}
-  m_LocalRotation: {x: 0.14958338, y: -0.0000000085216145, z: 0.0000000012841972, w: 0.98874915}
-  m_LocalPosition: {x: -11.4, y: 16, z: -41.9}
+  m_LocalRotation: {x: 0.14958341, y: 0.000000005322847, z: 8.052589e-10, w: 0.98874915}
+  m_LocalPosition: {x: -10.32, y: 14.4, z: -41.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -498,6 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boostforce: 25
   Boostdirection: {x: 1, y: 0.3, z: 0}
+  vcam: {fileID: 0}
 --- !u!65 &187982374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -746,6 +747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bounceforce: 3
+  vcam: {fileID: 0}
 --- !u!136 &458420891
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1075,8 +1077,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a77f144db0c8884eb23775e022dfad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boostforce: 25
+  Boostforce: 20
   Boostdirection: {x: 0, y: 0.5, z: -1}
+  vcam: {fileID: 0}
 --- !u!65 &657099927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1260,6 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bounceforce: 3
+  vcam: {fileID: 0}
 --- !u!136 &929363790
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1559,7 +1563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323503551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.2, y: 1.35, z: 5.32}
+  m_LocalPosition: {x: -33.1, y: 1.35, z: 5.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1661,7 +1665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466962882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.1, y: 0.03, z: 6.38}
+  m_LocalPosition: {x: -32.39, y: 0.03, z: 6.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1698,7 +1702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499341833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4, y: 9, z: -21.9}
+  m_LocalPosition: {x: -10.32, y: 7.4, z: -21.28}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1968,7 +1972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554344665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4, y: 16, z: -41.9}
+  m_LocalPosition: {x: -10.32, y: 14.4, z: -41.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1581871007}
@@ -2043,7 +2047,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571562925}
-  m_LocalRotation: {x: 0.14958337, y: -0.000000008506399, z: 0.0000000012868945, w: 0.98874915}
+  m_LocalRotation: {x: 0.14958338, y: 8.4820736e-16, z: -8.733781e-17, w: 0.98874915}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2117,7 +2121,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581871005}
-  m_LocalRotation: {x: 0.16754347, y: 0.00000000848158, z: -0.0000000014414079, w: 0.9858647}
+  m_LocalRotation: {x: 0.16754349, y: -1e-45, z: -0, w: 0.9858647}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2191,7 +2195,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612800117}
-  m_LocalRotation: {x: 0.1316214, y: 0.00000001906995, z: -0.0000000025320426, w: 0.99130005}
+  m_LocalRotation: {x: 0.13162144, y: -0, z: -0, w: 0.99130005}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2233,6 +2237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bounceforce: 3
+  vcam: {fileID: 0}
 --- !u!136 &1653821989
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2753,8 +2758,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a77f144db0c8884eb23775e022dfad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boostforce: 25
+  Boostforce: 20
   Boostdirection: {x: 0, y: 0.5, z: 1}
+  vcam: {fileID: 0}
 --- !u!65 &2133204578
 BoxCollider:
   m_ObjectHideFlags: 0
