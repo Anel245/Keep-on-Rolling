@@ -118,4 +118,9 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     {
 
     }
+
+    public void OnCamera(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

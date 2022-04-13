@@ -46,10 +46,10 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Look around"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""5adb8e68-b4d5-4234-a50d-ad267821403b"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""Camera"",
+                    ""type"": ""Button"",
+                    ""id"": ""5a85611c-47c8-40d7-9173-a2eee5c413df"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -57,7 +57,7 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""W A S D"",
+                    ""name"": ""2D Vector"",
                     ""id"": ""7f773e03-1dc9-49ce-92bd-248546f37b04"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -112,61 +112,6 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Controller Stick"",
-                    ""id"": ""d91b1929-7a27-4232-97ee-b79b13db1194"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""64725ca6-ecc2-4b9e-9273-93f581bdbb8a"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""d71fc30c-f52f-4408-b59f-47e1fa73f6f7"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""c5fc35b4-ab77-42bc-9a2a-2bb1867d8fe7"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""0d39d3d6-ecda-4bad-a0c8-2f13ee88ffd1"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""8b28fcd0-6b9b-4c96-b569-a702771749d5"",
                     ""path"": ""<Keyboard>/space"",
@@ -179,45 +124,12 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0a2390a2-a587-4cc7-bef3-a4b008b99249"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""4ffbb2cc-9513-49c1-b11f-6a88b9901b41"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3b90c1ae-b0fc-4428-a64d-95695e8f9473"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7085aaf1-084c-4853-b416-ab87de444cba"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look around"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""10eaa790-cd4a-422f-a44f-986446a56400"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look around"",
+                    ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -230,7 +142,7 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
         m_Ball_Controls = asset.FindActionMap("Ball_Controls", throwIfNotFound: true);
         m_Ball_Controls_Movement = m_Ball_Controls.FindAction("Movement", throwIfNotFound: true);
         m_Ball_Controls_Jump = m_Ball_Controls.FindAction("Jump", throwIfNotFound: true);
-        m_Ball_Controls_Lookaround = m_Ball_Controls.FindAction("Look around", throwIfNotFound: true);
+        m_Ball_Controls_Camera = m_Ball_Controls.FindAction("Camera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -292,14 +204,14 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
     private IBall_ControlsActions m_Ball_ControlsActionsCallbackInterface;
     private readonly InputAction m_Ball_Controls_Movement;
     private readonly InputAction m_Ball_Controls_Jump;
-    private readonly InputAction m_Ball_Controls_Lookaround;
+    private readonly InputAction m_Ball_Controls_Camera;
     public struct Ball_ControlsActions
     {
         private @Ball_Controlls m_Wrapper;
         public Ball_ControlsActions(@Ball_Controlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Ball_Controls_Movement;
         public InputAction @Jump => m_Wrapper.m_Ball_Controls_Jump;
-        public InputAction @Lookaround => m_Wrapper.m_Ball_Controls_Lookaround;
+        public InputAction @Camera => m_Wrapper.m_Ball_Controls_Camera;
         public InputActionMap Get() { return m_Wrapper.m_Ball_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -315,9 +227,9 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnJump;
-                @Lookaround.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookaround;
-                @Lookaround.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookaround;
-                @Lookaround.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookaround;
+                @Camera.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnCamera;
+                @Camera.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnCamera;
+                @Camera.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnCamera;
             }
             m_Wrapper.m_Ball_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -328,9 +240,9 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Lookaround.started += instance.OnLookaround;
-                @Lookaround.performed += instance.OnLookaround;
-                @Lookaround.canceled += instance.OnLookaround;
+                @Camera.started += instance.OnCamera;
+                @Camera.performed += instance.OnCamera;
+                @Camera.canceled += instance.OnCamera;
             }
         }
     }
@@ -339,6 +251,6 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnLookaround(InputAction.CallbackContext context);
+        void OnCamera(InputAction.CallbackContext context);
     }
 }
