@@ -24,10 +24,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Camera",
-                    "type": "Button",
+                    "name": "Look Around",
+                    "type": "PassThrough",
                     "id": "5a85611c-47c8-40d7-9173-a2eee5c413df",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -35,7 +35,7 @@
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
+                    "name": "WASD",
                     "id": "7f773e03-1dc9-49ce-92bd-248546f37b04",
                     "path": "2DVector",
                     "interactions": "",
@@ -90,6 +90,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Controller",
+                    "id": "3e2d9071-2e06-46cb-b5c7-e3348aa466ef",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "dcf41627-5bcd-4f58-b156-81a7f0ffdad3",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "42b2ddc2-e1f0-4b84-8471-ef540880a0a9",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "ddf75a92-a6b7-46ca-9e87-6db6f2971ea1",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "da8e8dd9-867d-4b61-b498-cfc529992df8",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "8b28fcd0-6b9b-4c96-b569-a702771749d5",
                     "path": "<Keyboard>/space",
@@ -103,11 +158,22 @@
                 {
                     "name": "",
                     "id": "4ffbb2cc-9513-49c1-b11f-6a88b9901b41",
-                    "path": "",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Camera",
+                    "action": "Look Around",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c1e2f1f-89b2-4016-b8c4-b92b9febfa00",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look Around",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
