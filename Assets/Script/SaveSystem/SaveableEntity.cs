@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Save : MonoBehaviour
+public class SaveableEntity : MonoBehaviour
 {
     [SerializeField] private string id;
     public string Id => id;
