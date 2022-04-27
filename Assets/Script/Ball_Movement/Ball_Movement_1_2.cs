@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
-public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
+public class Ball_Movement_1_2 : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
 {
     private Rigidbody Ball_RB;
     private Vector3 Input_Direction;
@@ -27,11 +28,21 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     public Camera Cam;
     private float Cam_rotation;
     private Quaternion Cam_Quat;
+    public CinemachineFreeLook CineCamera;
 
     private Ball_Controlls controlls;
 
+    //Switch
+    private bool BallForm;
+    public MeshFilter meshfilter;
+    public Mesh CatMesh;
+    public Mesh CubeMesh;
+    public Collider BallCol;
+    public Collider CubeCol;
+
     private void Awake()
     {
+        BallForm = true;
         Cam = Camera.main;
         GroundSpeed = Speed;
         AirSpeed = GroundSpeed * AirSpeedControl;
@@ -46,6 +57,7 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             controlls.Ball_Controls.SetCallbacks(this);
         }
     }
+
     void FixedUpdate()
     {
         // Is the ball grounded, switching between Airspeed and Groundspeed, switching between Airdrag and Grounddrag
@@ -70,15 +82,20 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             Ball_RB.drag = AirDrag;
         }
 
+        CineCamera.m_Lens.FieldOfView = 35 + Ball_RB.velocity.magnitude*1.5f;
+
         // Ball movement
 
         Cam_rotation = Cam.transform.rotation.eulerAngles.y;
         Cam_Quat = Quaternion.Euler(0f, Cam_rotation, 0f);
         Input_Direction = new Vector3(Horizontal_Input, 0f, Vertical_Input).normalized;
-        if (Ball_RB.velocity.magnitude <= Max_Velocity)
+        Ball_RB.AddForce(Cam_Quat * Input_Direction * Speed);
+        if (Ball_RB.velocity.magnitude > Max_Velocity)
         {
-            Ball_RB.AddForce(Cam_Quat * Input_Direction * Speed);
+            Ball_RB.velocity = Vector3.ClampMagnitude(Ball_RB.velocity, Max_Velocity);
         }
+
+
     }
 
     // Is the ball grounded
@@ -110,7 +127,7 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     {
         if (Grounded == true)
         {
-            Ball_RB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Ball_RB.AddForce(Vector3.up * jumpForce);
         }
     }
 
@@ -121,6 +138,22 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     public void OnSwitch(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        if(BallForm == true)
+        {
+            meshfilter.mesh = CubeMesh;
+            CubeCol.enabled = true;
+            BallCol.enabled = false;
+            BallForm = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            Ball_RB.freezeRotation = true;
+        }
+        else
+        {
+            meshfilter.mesh = CatMesh;
+            BallCol.enabled = true;
+            CubeCol.enabled = false;
+            BallForm = true;
+            Ball_RB.constraints = RigidbodyConstraints.None;
+        }
     }
 }
