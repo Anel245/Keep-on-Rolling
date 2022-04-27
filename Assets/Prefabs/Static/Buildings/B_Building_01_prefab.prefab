@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4308101219645004596}
   - component: {fileID: 893587044097397905}
   - component: {fileID: 3135173737574424667}
+  - component: {fileID: -6422026410520715110}
   m_Layer: 0
   m_Name: B_Building_01_prefab
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-6422026410520715110
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3495536131874636174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3577518859123135851, guid: 1ebb615545d77b64f924b8157c054870, type: 3}
