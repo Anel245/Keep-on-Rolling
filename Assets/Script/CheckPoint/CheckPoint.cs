@@ -11,6 +11,7 @@ public class CheckPoint : MonoBehaviour, ISaveable
     {
         if(collision.transform.tag == "Player") 
         {
+            Debug.Log("test");
             PlayerManager.lastCheckPointPos = transform.position;
         }
         
