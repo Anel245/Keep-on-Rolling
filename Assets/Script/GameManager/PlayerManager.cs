@@ -22,4 +22,14 @@ public class PlayerManager : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
     }
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Crusher")
+        {
+            Debug.Log("Ouch");
+            Player.transform.position = lastCheckPointPos;
+        }
+    }
+
+
 }
