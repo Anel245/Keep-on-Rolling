@@ -2,20 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
     public static Vector3 lastCheckPointPos = new Vector3(-36, 1, -40);
     public GameObject Player;
-    void Update()
-    {
-        if (Player.transform.position.y < -2f)
-        {
-            Debug.Log("falling");
-            Player.transform.position = lastCheckPointPos;
-            Debug.Log(lastCheckPointPos);
-            Debug.Log(Player.transform.position);
-        }
-    }
 
     private void Awake()
     {
@@ -24,12 +14,11 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Crusher")
+        if (collision.transform.tag == "Crusher")
         {
-            Debug.Log("Ouch");
+            Debug.Log("testCollision");
             Player.transform.position = lastCheckPointPos;
         }
+
     }
-
-
 }
