@@ -15,7 +15,11 @@ GameObject:
   - component: {fileID: 1265892164162517079}
   - component: {fileID: 1265892164162517073}
   - component: {fileID: 1265892164162517074}
+<<<<<<< HEAD
   - component: {fileID: 1265892164162517078}
+=======
+  - component: {fileID: -7258437435991651557}
+>>>>>>> Lisa
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -159,7 +163,11 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &1265892164162517078
+=======
+--- !u!114 &-7258437435991651557
+>>>>>>> Lisa
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +176,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1265892164162517077}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: c1cfd2a5df5544944b1f222b45986c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: -15
+=======
+  m_Script: {fileID: 11500000, guid: 95f5f1cb928b3e1419a5b8f4fc41bfa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1265892164162517077}
+>>>>>>> Lisa
