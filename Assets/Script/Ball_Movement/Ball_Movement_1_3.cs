@@ -72,6 +72,7 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         //Get Rigidbody & Camera
         Ball_RB = this.GetComponent<Rigidbody>();
         Cam = Camera.main;
+        CineCamera = FindObjectOfType<CinemachineFreeLook>();
 
 
         //Setting private Ball Movement Values
@@ -146,18 +147,19 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     // Is the ball grounded
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionExit(Collision other)
     {
-        if (other.tag == "Ground")
-        {
-            Colliding_Objects += 1;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Ground")
+        if (other.gameObject.tag == "Ground")
         {
             Colliding_Objects -= 1;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            Colliding_Objects += 1;
         }
     }
 
