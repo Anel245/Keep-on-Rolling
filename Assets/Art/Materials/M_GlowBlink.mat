@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_GlowBlink
-  m_Shader: {fileID: -6465566751694194690, guid: 66e3404c85c219843abea36082779e41, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7220025312a25f74a8f70cd4dbcc7e91, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -95,6 +95,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Glow_Power: 2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -114,8 +115,10 @@ Material:
     - Color_49144a8c01f7450a9c3b360ef5961b17: {r: 0, g: 0, b: 0, a: 0}
     - Color_a18f1fa95a3f450a9561eee228104aa9: {r: 0, g: 0.6914551, b: 1, a: 0}
     - _BaseColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
+    - _Base_Color: {r: 0.5313279, g: 0.5497037, b: 0.5660378, a: 1}
     - _Color: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Glow_Color: {r: 0, g: 0.693872, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7104646465988304117
