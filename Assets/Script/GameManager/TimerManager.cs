@@ -7,17 +7,30 @@ using UnityEngine.UI;
 public class TimerManager : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
+    public TextMeshProUGUI highScore;
     private float startTime;
     private bool finnished = false;
+    
 
     void Start()
     {
         startTime = Time.time;
+        // Display the HighScore
+        highScore.text = PlayerPrefs.GetFloat("HighScore", 0).ToString();
     }
     void Update()
     {
         if (finnished)
         {
+            // If the time that the player took to finish the level is lower as was it is save in the highScore then...
+            if (startTime < PlayerPrefs.GetFloat("HighScore", 0))
+            {
+              Debug.Log("better time");
+              // The highscore is set here
+              PlayerPrefs.SetFloat("HighScore", startTime);
+              // Update the highscore
+              highScore.text = startTime.ToString();
+            }
             return;
         }
 
@@ -38,6 +51,12 @@ public class TimerManager : MonoBehaviour
         finnished = true;
         TimerText.color = Color.red;
     }
+
+
+
+
+
+
 
 
 
