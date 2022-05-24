@@ -3,7 +3,22 @@ guid: e2f5fb02d053903499f2147a6d54cf9a
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Base
+    second: {fileID: 2100000, guid: 8c39f786b36fd0047bb26ec5f2e34f69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Detail.001
+    second: {fileID: 2100000, guid: 8c39f786b36fd0047bb26ec5f2e34f69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hydrant
+    second: {fileID: 2100000, guid: 711856240a34d564a8a2004c20ad0e85, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
