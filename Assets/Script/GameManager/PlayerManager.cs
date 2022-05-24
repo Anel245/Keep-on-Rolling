@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static Vector3 lastCheckPointPos = new Vector3(-36, 1, -40);
+    public static Vector3 lastCheckPointPos;
     public GameObject Player;
     void Update()
     {
@@ -19,7 +19,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
+        //GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
+        lastCheckPointPos = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
     private void OnTriggerEnter(Collider collision)
