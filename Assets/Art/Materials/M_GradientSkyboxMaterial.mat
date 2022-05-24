@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4166975908003661763
+--- !u!114 &-1267267043561427548
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,11 +20,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Building4
-  m_Shader: {fileID: -6465566751694194690, guid: e78a6f77f0fbe4d4cb74d45cade3f8a5, type: 3}
+  m_Name: M_GradientSkyboxMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: fc3745f09ed1c754ab918c6ed2b2098c, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -33,28 +33,28 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_1e8847b5458f4542afdb5c86b08c745b:
+    - _BackTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_2934214C:
+    - _DownTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_45470ca04cfc4e99a8452c230b8c88b0:
+    - _FrontTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_599E2C21:
+    - _LeftTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_B50B19B:
+    - _RightTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Triplanar_78e7bcb2f5bc4b12bfeb11224ce0f863_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 31fca2afe3370f843807a3af66fb04dc, type: 3}
+    - _UpTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -71,21 +71,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_4d771d24376e476db244791429b6227f: 0.2
-    - Vector1_ee6fc7fc544d4573924a535bb0b6cf4d: 0.5
-    - _ColorLerpOffset: -39
-    - _LerpPower: 1.07
-    - _Metallic: 1
-    - _Offset: -13.5
+    - _Gradient: 0.569
+    - _Hardness: 0.438
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Rotate: 1
-    - _Smoothness: 0.5
     m_Colors:
-    - Color_5e503ee017354591a6e91aacf8b47c53: {r: 0, g: 0, b: 0, a: 0}
-    - Color_b8b0a84e83364c94b2de1ca5d8d76a53: {r: 0.6773169, g: 0.26666662, b: 0.8980392, a: 0}
-    - Vector2_a634a8835c9e4436b0a177c187d90f21: {r: 1, g: 1, b: 0, a: 0}
-    - _Color2: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
-    - _Color3: {r: 0.2236116, g: 0.7075472, b: 0.6917094, a: 0}
-    - _color: {r: 0, g: 0.6784315, b: 1, a: 0}
+    - _Bottom_Color: {r: 0.8207547, g: 0.7386312, b: 0.63105196, a: 1}
+    - _Top_Color: {r: 0.45, g: 0.67148435, b: 0.9, a: 0}
   m_BuildTextureStacks: []
