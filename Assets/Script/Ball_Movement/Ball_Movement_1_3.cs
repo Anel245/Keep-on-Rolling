@@ -20,6 +20,7 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     private float BallGroundDrag;
     private float BallAirDrag;
     public float  BallAirDragRate;
+    public GameObject Trail;
 
     [Header("Cat Values")]
     public float CatSpeed;
@@ -194,6 +195,7 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             BallForm = false;
             Ball_RB.freezeRotation = true;
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            Trail.SetActive(false);
 
             //Switch to Cat movement values
             Speed = CatSpeed;
@@ -213,6 +215,7 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             CatCol.enabled = false;
             BallForm = true;
             Ball_RB.constraints = RigidbodyConstraints.None;
+            Trail.SetActive(true);
 
             //Switch to Ball movement values
             Speed = BallSpeed;
