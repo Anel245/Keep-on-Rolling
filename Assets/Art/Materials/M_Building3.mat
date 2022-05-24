@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Building3
-  m_Shader: {fileID: -6465566751694194690, guid: 57dfd622ef5021044b1f5b07cc4ba7cd, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: e78a6f77f0fbe4d4cb74d45cade3f8a5, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -37,7 +37,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_2934214C:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_45470ca04cfc4e99a8452c230b8c88b0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_599E2C21:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_B50B19B:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -61,10 +73,19 @@ Material:
     m_Floats:
     - Vector1_4d771d24376e476db244791429b6227f: 0.2
     - Vector1_ee6fc7fc544d4573924a535bb0b6cf4d: 0.5
+    - _ColorLerpOffset: -44.47
+    - _LerpPower: 1.07
+    - _Metallic: 0.7
+    - _Offset: -12
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Rotate: 1
+    - _Smoothness: 0.5
     m_Colors:
     - Color_5e503ee017354591a6e91aacf8b47c53: {r: 0, g: 0, b: 0, a: 0}
     - Color_b8b0a84e83364c94b2de1ca5d8d76a53: {r: 0.28001758, g: 0.8980392, b: 0.26666662, a: 0}
     - Vector2_a634a8835c9e4436b0a177c187d90f21: {r: 1, g: 1, b: 0, a: 0}
+    - _Color2: {r: 1, g: 0.69229865, b: 0, a: 0}
+    - _Color3: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
+    - _color: {r: 0.9339623, g: 0.33922213, b: 0.33922213, a: 0}
   m_BuildTextureStacks: []
