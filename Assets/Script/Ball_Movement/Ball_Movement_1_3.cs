@@ -85,7 +85,7 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         //Setting private Cat Movement Values
         CatGroundSpeed = CatSpeed;
         CatAirSpeed = CatGroundSpeed * CatAirSpeedControl;
-        CatGroundDrag = Ball_RB.drag * 3;
+        CatGroundDrag = Ball_RB.drag;
         CatAirDrag = CatGroundDrag * CatAirDragRate;
 
         //Setting Current Movement
@@ -112,7 +112,7 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     {
         // Is the ball grounded, switching between Airspeed and Groundspeed, switching between Airdrag and Grounddrag
         
-        if (Colliding_Objects > 0)
+        if (Physics.Raycast(transform.position, Vector3.down, 2))
         {
             Grounded = true;
         }
@@ -148,21 +148,21 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     // Is the ball grounded
 
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.tag == "Ground")
-        {
-            Colliding_Objects -= 1;
-        }
-    }
+    //private void OnCollisionExit(Collision other)
+    //{
+    //    if (other.gameObject.tag == "Ground")
+    //    {
+    //        Colliding_Objects -= 1;
+    //    }
+    //}
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Ground")
-        {
-            Colliding_Objects += 1;
-        }
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.tag == "Ground")
+    //    {
+    //        Colliding_Objects += 1;
+    //    }
+    //}
 
     // Inputs
 

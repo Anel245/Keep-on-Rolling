@@ -9,7 +9,6 @@ public class CrusherPatrolling : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
-    public float NumbersOfWaypoints;
 
     void Start()
     {
@@ -20,7 +19,7 @@ public class CrusherPatrolling : MonoBehaviour
    
     void Update()
     {
-        if (Vector3.Distance(transform.position, target) < NumbersOfWaypoints)
+        if (Vector3.Distance(transform.position, target) < waypoints.Length)
         {
             IterateWaypointIndex();
             UpdateDestination();

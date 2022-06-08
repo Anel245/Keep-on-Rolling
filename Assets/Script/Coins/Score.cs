@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
 
     void Update ()
     {     
-        CoinsText.GetComponent<Text>().text = "COINS:" + theScore;       
+        CoinsText.GetComponent<Text>().text = "Score: " + theScore;
     }
 
 
