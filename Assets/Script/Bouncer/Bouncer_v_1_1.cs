@@ -6,14 +6,15 @@ using Cinemachine;
 public class Bouncer_v_1_1 : MonoBehaviour
 {
     public float Bounceforce;
+    public float KeepVelocity;
 
     private Rigidbody Player_RB;
-    private Vector3 PlayerMoveDirection;
+    private Vector3 BounceDirection;
 
     private void OnTriggerEnter(Collider other)
     {
         Player_RB = other.GetComponent<Rigidbody>();
-        PlayerMoveDirection = Player_RB.velocity;
-        Player_RB.AddForce(-PlayerMoveDirection * Bounceforce, ForceMode.Impulse);
+        BounceDirection = Player_RB.velocity.normalized + ((other.transform.position - transform.position).normalized * 1.4f); 
+        Player_RB.AddForce(BounceDirection.normalized * ((Player_RB.velocity.magnitude * KeepVelocity) +1) * Bounceforce, ForceMode.Impulse);
     }
 }

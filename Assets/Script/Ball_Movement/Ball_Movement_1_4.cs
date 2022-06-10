@@ -21,6 +21,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     private float BallAirDrag;
     public float BallAirDragRate;
     public GameObject Trail;
+    public float GroundcheckLength;
 
     private bool Grounded;
 
@@ -67,7 +68,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     {
         // Is the ball grounded, switching between Airspeed and Groundspeed, switching between Airdrag and Grounddrag
 
-        if (Physics.Raycast(transform.position, Vector3.down, 2))
+        if (Physics.Raycast(transform.position, Vector3.down, GroundcheckLength))
         {
             Grounded = true;
         }
