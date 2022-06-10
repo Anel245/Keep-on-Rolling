@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 1929578080889084714}
   - component: {fileID: 1929578080889084713}
   - component: {fileID: 1929578080889084712}
-  - component: {fileID: 1929578080889084631}
+  - component: {fileID: 170634394}
   - component: {fileID: 1929578080889084627}
   - component: {fileID: 1929578080889084629}
-  - component: {fileID: 1929578080889084630}
   - component: {fileID: 1929578080889084626}
   - component: {fileID: 1212574473980860086}
   m_Layer: 0
@@ -91,7 +90,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1929578080889084631
+--- !u!114 &170634394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,25 +99,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929578080889084625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9e3f629834b2a41aef24c03c04b2dc, type: 3}
+  m_Script: {fileID: 11500000, guid: e2014f716eedb2d478cf48c0dde0aaa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallSpeed: 30
-  BallAirSpeedControl: 0.1
+  BallSpeed: 25
+  BallAirSpeedControl: 0.01
   BalljumpForce: 3
-  BallAirDragRate: 0.1
-  CatSpeed: 50
-  CatAirSpeedControl: 0.1
-  CatjumpForce: 5
-  CatAirDragRate: 0.1
+  BallAirDragRate: 0.3
+  Trail: {fileID: 0}
   Cam: {fileID: 0}
   CineCamera: {fileID: 0}
   SmoothTime: 0.1
-  meshfilter: {fileID: 1929578080889084713}
-  CatMesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-  BallMesh: {fileID: -3138727181002710443, guid: db83c9a29a43fd943990f4e90b19b273, type: 3}
-  BallCol: {fileID: 1929578080889084629}
-  CatCol: {fileID: 1929578080889084630}
 --- !u!54 &1929578080889084627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,7 +119,7 @@ Rigidbody:
   m_GameObject: {fileID: 1929578080889084625}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 1
+  m_Drag: 0.4
   m_AngularDrag: 0.08
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -142,25 +133,11 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929578080889084625}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3e070872ae3cb6b4c99de14b5e77d7b5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1929578080889084630
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929578080889084625}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1929578080889084626
 MonoBehaviour:
