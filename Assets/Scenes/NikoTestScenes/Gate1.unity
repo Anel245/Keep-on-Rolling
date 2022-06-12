@@ -15,18 +15,18 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.3669455, g: 0.5194794, b: 0.5849056, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.001
+  m_FogColor: {r: 0.78431374, g: 0.5019608, b: 0.40392157, a: 1}
+  m_FogMode: 2
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.18405126, g: 0.4964692, b: 0.8301887, a: 1}
   m_AmbientEquatorColor: {r: 0.0627451, g: 0.15294118, b: 0.3529412, a: 1}
   m_AmbientGroundColor: {r: 0.8207547, g: 0.52695084, b: 0.15873085, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 1
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 992274e22d8cf4244bdb8c8314d1474b, type: 2}
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.23921569, g: 0.3372549, b: 0.44313726, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -11398,7 +11398,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9506416, y: 1}
+    m_SensorSize: {x: 2.4879725, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -26159,7 +26159,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.5566038, g: 0.4521059, b: 0.26517445, a: 1}
+  m_Color: {r: 1, g: 0.9137255, b: 0.7764706, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -27901,7 +27901,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9506416, y: 1}
+    m_SensorSize: {x: 2.4879725, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -27917,7 +27917,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207738471}
-  m_LocalRotation: {x: 0.16754349, y: 0.000000008481582, z: -0.0000000014414085, w: 0.9858647}
+  m_LocalRotation: {x: 0.16754349, y: -0.000000008481582, z: 0.0000000014414085, w: 0.9858647}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -29399,7 +29399,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9506416, y: 1}
+    m_SensorSize: {x: 2.4879725, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -36448,7 +36448,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9506416, y: 1}
+    m_SensorSize: {x: 2.4879725, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
