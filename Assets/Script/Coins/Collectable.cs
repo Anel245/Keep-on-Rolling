@@ -1,14 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Collectable : MonoBehaviour
+public class Collectable : MonoBehaviour, ISaveable
 {
     [SerializeField]
     private float rotationSpeed;
 
     [SerializeField]
     private Vector3 rotation = Vector3.up;
+
+    public float coin;
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            coin = this.coin
+        };
+    }
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+       coin = saveData.coin; ;
+    }
+    [Serializable]
+    private struct SaveData
+    {
+        public float coin;
+    }
+
 
     void OnTriggerEnter(Collider other)
     {

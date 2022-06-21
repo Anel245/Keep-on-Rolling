@@ -22,6 +22,7 @@ public class SaveLoadSystem : MonoBehaviour
         var state = LoadFile();
         LoadState(state);
     }
+   
 
     public void SaveFile(object state)
     {

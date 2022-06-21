@@ -16,7 +16,7 @@ public class TimerManager : MonoBehaviour
     {
         startTime = Time.time;
         // Display the HighScore
-        highScore.text = PlayerPrefs.GetFloat("HighScore", 0).ToString();
+        //highScore.text = PlayerPrefs.GetFloat("HighScore", 0).ToString();
     }
     void Update()
     {
