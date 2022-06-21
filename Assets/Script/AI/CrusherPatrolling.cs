@@ -9,39 +9,52 @@ public class CrusherPatrolling : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
-<<<<<<< Updated upstream
+
     public float NumbersOfWaypoints;
-=======
+
     public GameObject Crusher;
     public float speed;
     public float rotationSpeed;
->>>>>>> Stashed changes
+    public float fraction;
+
+    public Rigidbody rb;
+
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         UpdateDestination();
+        //rb.velocity = new Vector3(speed * Time.deltaTime, rb.velocity.z);
     }
 
    
     void Update()
     {
-<<<<<<< Updated upstream
+
         if (Vector3.Distance(transform.position, target) < NumbersOfWaypoints)
-=======
+
         //Crusher.transform.rotation = Quaternion.LookRotation(target);
         //Vector3 direction = waypoints.position - transform.position;
         //Quaternion rotation = Quaternion.LookRotation(direction);
         //transform.rotation = Quaternion.Lerp(transform.rotation, rotation, speed * Time.deltaTime);
         //Crusher.transform.rotation = Quaternion.Slerp(Crusher.transform.rotation, Quaternion.LookRotation(target), Time.deltaTime * 10f);
         if (Vector3.Distance(transform.position, target) < waypoints.Length)
->>>>>>> Stashed changes
         {
-            Quaternion toRotation = Quaternion.LookRotation(target, Vector3.up);
+                fraction += Time.deltaTime * speed;
+                //transform.position = Vector3.Lerp(target);
+                //yield return null;
+                Quaternion toRotation = Quaternion.LookRotation(target, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             IterateWaypointIndex();
             UpdateDestination();
         }
+        fraction = 0f;
+  
+        //else
+        //{
+        //    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+        //}
     }
 
     void UpdateDestination()
