@@ -50,12 +50,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2014f716eedb2d478cf48c0dde0aaa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallSpeed: 25
+  BallSpeed: 30
   BallAirSpeedControl: 0.01
   BalljumpForce: 3
   BallAirDragRate: 0.3
   Trail: {fileID: 638361621113849962}
-  GroundcheckLength: 0
+  GroundcheckLength: 1.2
   Cam: {fileID: 0}
   CineCamera: {fileID: 0}
   SmoothTime: 0.1
@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246109981639881199, guid: 575e621e026d1324a9413be0ed747946, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.961
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4246109981639881199, guid: 575e621e026d1324a9413be0ed747946, type: 3}
       propertyPath: m_LocalPosition.z
