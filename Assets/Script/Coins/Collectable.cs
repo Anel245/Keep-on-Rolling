@@ -1,9 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Collectable : MonoBehaviour
+public class Collectable : MonoBehaviour, ISaveable
 {
+
+    public float coin;
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            coin = this.coin
+        };
+    }
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+       coin = saveData.coin; ;
+    }
+    [Serializable]
+    private struct SaveData
+    {
+        public float coin;
+    }
+
 
     void OnTriggerEnter(Collider other)
     {

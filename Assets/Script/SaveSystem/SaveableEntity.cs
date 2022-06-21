@@ -14,6 +14,7 @@ public class SaveableEntity : MonoBehaviour
         id = Guid.NewGuid().ToString();
     }
 
+
     public object SaveState()
     {
         var state = new Dictionary<string, object>();
