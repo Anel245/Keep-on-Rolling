@@ -12,6 +12,8 @@ public class Collectable : MonoBehaviour, ISaveable
     private Vector3 rotation = Vector3.up;
 
     public float coin;
+    public Score Scorescript;
+
     public object SaveState()
     {
         return new SaveData()
@@ -30,10 +32,15 @@ public class Collectable : MonoBehaviour, ISaveable
         public float coin;
     }
 
+    private void Awake()
+    {
+        Scorescript = GameObject.Find("Score").GetComponent<Score>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         Score.theScore += 1;
+        Scorescript.Collected();
         Destroy(gameObject);
     }
 

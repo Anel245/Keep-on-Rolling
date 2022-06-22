@@ -6,30 +6,33 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public GameObject CoinsText;
+    public TextMeshProUGUI ScoreText;
     public static int theScore;
+    public float Timer;
+    private float PrTimer;
+    private bool Counting;
 
     void Update ()
-    {     
-        CoinsText.GetComponent<Text>().text = "Score: " + theScore;
+    {
+        ScoreText.text = "Score: " + theScore;
+
+        if (Counting)
+        {
+            PrTimer += Time.deltaTime;
+        }
+
+        if (PrTimer > Timer)
+        {
+            Counting = false;
+            PrTimer = 0;
+            ScoreText.fontSize = 0;
+        }
     }
 
-
-    //int score = 0;
-    //public TextMesh tm;
-    //public static Score instance;
-
-    //void Start()
-    //{
-    //    if (instance == null)
-    //    {
-    //        instance = this;
-    //    }
-    //}
-
-    //public void AddScore()
-    //{
-    //    score++;
-    //    tm.text = score.ToString();
-    //}
+    public void Collected()
+    {
+        ScoreText.fontSize = 50;
+        Counting = true;
+        PrTimer = 0;
+    }
 }
