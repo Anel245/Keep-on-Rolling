@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public float restartDelay = 1f;
     public GameObject completeGameUI;
 
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     public void CompleteLevel()
     {
         Debug.Log("LevelWon");
