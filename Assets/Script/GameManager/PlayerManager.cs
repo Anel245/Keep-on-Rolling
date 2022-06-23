@@ -6,12 +6,16 @@ public class PlayerManager : MonoBehaviour
 {
     public static Vector3 lastCheckPointPos;
     public GameObject Player;
+    public float Fallheight;
+    private Rigidbody rb;
+
     void Update()
     {
-        if (Player.transform.position.y < -2f)
+        if (Player.transform.position.y < -Fallheight)
         {
             Debug.Log("falling");
             Player.transform.position = lastCheckPointPos;
+            rb.velocity = Vector3.zero;
             Debug.Log(lastCheckPointPos);
             Debug.Log(Player.transform.position);
         }
@@ -25,6 +29,7 @@ public class PlayerManager : MonoBehaviour
     {
         //GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
         lastCheckPointPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        rb = Player.GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider collision)
