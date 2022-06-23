@@ -15,6 +15,10 @@ public class PlayerManager : MonoBehaviour
             Debug.Log(lastCheckPointPos);
             Debug.Log(Player.transform.position);
         }
+        //if (Player.transform.position = lastCheckPointPos)
+        //{
+        //    LoadCoin()
+        //}
     }
 
     private void Awake()
@@ -32,5 +36,9 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void Dying()
+    {
+        //Save_2.DeleteSavedData();
+    }
 
 }
