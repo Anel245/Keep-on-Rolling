@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 751801739953043354}
   - component: {fileID: 3281462744430871376}
   - component: {fileID: 1682357697076034708}
+  - component: {fileID: 2824035287202253702}
   m_Layer: 0
   m_Name: PF_Booster_Platform_01
   m_TagString: Untagged
@@ -106,3 +107,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5501206780606229645, guid: ad0d119aa8280d644bbf00ba78d8d628, type: 3}
+--- !u!114 &2824035287202253702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930204909946053253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a77f144db0c8884eb23775e022dfad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boostforce: 0
+  Boostdirection: {x: 0, y: 0, z: 0}
