@@ -9,12 +9,13 @@ public class EndTrigger : MonoBehaviour
     public GameManager gameManager;
     public TimerManager timerManager;
     public TextMeshProUGUI TimerText;
+    
 
     void OnTriggerEnter()
     {
         gameManager.CompleteLevel();
         timerManager.Finnish();
-        TimerText.enabled = true;
+        TimerText.gameObject.SetActive(true);
         //TimerText.text.SetActive(true);
         //GameObject.Find("Player").SendMessage("Finnish");
 
