@@ -13,7 +13,7 @@ public class Save_2 : MonoBehaviour
     public void SaveCoin()
     {
         
-        PlayerPrefs.SetString(id,name);
+        //PlayerPrefs.SetString(id,name);
         Debug.Log("You collected " + PlayerPrefs.GetString("name"));
     }
     public void DeleteSavedData()
