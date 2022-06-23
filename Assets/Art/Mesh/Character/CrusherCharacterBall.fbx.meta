@@ -7,8 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: C_Emissive
+    second: {fileID: 2100000, guid: 993bcacc1c6462441ad036028e601462, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: C_Glass
+    second: {fileID: 2100000, guid: 896d2d6aa057a1e4084b69c4518882fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: C_Hologram
+    second: {fileID: 2100000, guid: 076a20fcaa6e84e4c957660647addae7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: C_Inlay
+    second: {fileID: 2100000, guid: 24f0ba3a0e1dc534e822be05e7c81ff6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: C_Metal
+    second: {fileID: 2100000, guid: 5e11a5486c28db347ad95b17db2382fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: EC_Display
     second: {fileID: 2100000, guid: 896d2d6aa057a1e4084b69c4518882fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EC_Glass
+    second: {fileID: 2100000, guid: 896d2d6aa057a1e4084b69c4518882fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EC_Inlay
+    second: {fileID: 2100000, guid: 24f0ba3a0e1dc534e822be05e7c81ff6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,6 +53,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MC_Hologram
+    second: {fileID: 2100000, guid: 076a20fcaa6e84e4c957660647addae7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_HologramFace
     second: {fileID: 2100000, guid: 076a20fcaa6e84e4c957660647addae7, type: 2}
   materials:
     materialImportMode: 2
