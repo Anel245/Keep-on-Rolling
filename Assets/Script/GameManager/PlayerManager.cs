@@ -6,7 +6,6 @@ public class PlayerManager : MonoBehaviour
 {
     public static Vector3 lastCheckPointPos;
     public GameObject Player;
-
     void Update()
     {
         if (Player.transform.position.y < -2f)
@@ -16,6 +15,10 @@ public class PlayerManager : MonoBehaviour
             Debug.Log(lastCheckPointPos);
             Debug.Log(Player.transform.position);
         }
+        //if (Player.transform.position = lastCheckPointPos)
+        //{
+        //    LoadCoin()
+        //}
     }
 
     private void Awake()
@@ -33,5 +36,9 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void Dying()
+    {
+        //Save_2.DeleteSavedData();
+    }
 
 }

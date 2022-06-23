@@ -7,14 +7,13 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public float restartDelay = 1f;
-    //public GameObject completeGameUI;
+    public GameObject completeGameUI;
 
 
     public void CompleteLevel()
     {
         Debug.Log("LevelWon");
-        SceneManager.LoadScene("Win_Screen_Scene");
-        //completeGameUI.SetActive(true);
+        completeGameUI.SetActive(true);
     }
 
     public void EndGame()
