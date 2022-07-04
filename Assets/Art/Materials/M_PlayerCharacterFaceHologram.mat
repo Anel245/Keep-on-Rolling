@@ -10,9 +10,11 @@ Material:
   m_Name: M_PlayerCharacterFaceHologram
   m_Shader: {fileID: -6465566751694194690, guid: 4e6b36744bf70754e856ce2217ca5753, type: 3}
   m_ValidKeywords:
-  - _EYE_SHAPE_ROUND
+  - _MASK_SQUARES
   m_InvalidKeywords:
   - _ENUM_A
+  - _EYE_SHAPE_ROUND
+  - _MASK_B
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -26,8 +28,20 @@ Material:
         m_Texture: {fileID: 2800000, guid: d184578ca3b0d9a4eae14f0310aff275, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_19b9b67b2fb24ae48a9ef28b545facf1_Texture_1:
+        m_Texture: {fileID: 2800000, guid: e1bcbc57628d8d649a9760f47ea23bea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_536cb8e1b99a413d951b1a01ed5b8000_Texture_1:
+        m_Texture: {fileID: 2800000, guid: c14d3db8a09a63849a171fe4c3f498bc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_8ca6d39177a640a2aff22f6494d3857b_Texture_1:
         m_Texture: {fileID: 2800000, guid: d184578ca3b0d9a4eae14f0310aff275, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a5205bf3c8334d338be21a54b8decbc1_Texture_1:
+        m_Texture: {fileID: 2800000, guid: e1bcbc57628d8d649a9760f47ea23bea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_7e40801989934c8cb7159f5d3d935ac8_Out_0:
@@ -60,6 +74,7 @@ Material:
     - _L_Eye_Outline: 0.1
     - _L_Eye_Pupil_Size: 0.05
     - _L_Eye_Size: 0.1
+    - _MASK: 2
     - _Mouth_Position_X: 0.5
     - _Mouth_Position_Y: 0.389
     - _Noise_Mask_Scale: 20
