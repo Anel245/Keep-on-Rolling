@@ -3,7 +3,22 @@ guid: 4e596e49eb1e5e847a47f734faa9c897
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Antenna
+    second: {fileID: 2100000, guid: 8a9486ae471414f4394887ff478fbdca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Metal
+    second: {fileID: 2100000, guid: 5f1308411220e22458cdf97fdcad2eff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tip
+    second: {fileID: 2100000, guid: 9fd07ccc77ab8c04ebf1f17ca6789e05, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
