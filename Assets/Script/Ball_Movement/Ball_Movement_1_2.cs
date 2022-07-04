@@ -156,4 +156,9 @@ public class Ball_Movement_1_2 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             Ball_RB.constraints = RigidbodyConstraints.None;
         }
     }
+
+    public void OnPauseMenu(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

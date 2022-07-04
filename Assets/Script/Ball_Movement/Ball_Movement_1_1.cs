@@ -123,4 +123,9 @@ public class Ball_Movement_1_1 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     {
         throw new System.NotImplementedException();
     }
+
+    public void OnPauseMenu(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

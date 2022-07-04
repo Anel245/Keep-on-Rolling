@@ -228,4 +228,9 @@ public class Ball_Movement_1_3 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             AirDragRate = BallAirDragRate;
         }
     }
+
+    public void OnPauseMenu(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }
