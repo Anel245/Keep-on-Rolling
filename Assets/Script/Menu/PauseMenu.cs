@@ -4,64 +4,77 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
 {
 
-    public static bool GameIsPaused = false;
-    public bool StoryIsplaying;
+    public bool GameIsPaused = false;
+    public GameObject WinScreen;
+    public GameObject PlayerUI;
 
     public GameObject pauseMenuUI;
-    AudioSource audioSrc;
+    public AudioSource audioSrc;
+    private Ball_Controlls controlls;
     //BackgroundMusicManager Music;
     //SoundManager Sound;
     //Story story;
 
-    void Start()
+    void Awake()
     {
-        audioSrc = GetComponent<AudioSource>();
         //Music = GameObject.Find("BackgroundMusicManager").GetComponent<BackgroundMusicManager>();
         //Sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         //story = GameObject.Find("Player").GetComponent<Story>();
+
+        //Get controller
+        if (controlls == null)
+        {
+            controlls = new Ball_Controlls();
+            controlls.Enable();
+            controlls.Ball_Controls.SetCallbacks(this);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPauseMenu(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (context.started)
         {
-            if (GameIsPaused)
+            if (WinScreen.activeSelf == false)
             {
-                //BackgroundMusicManager.Instance.PlaySound("B_Music_1");
-                Resume();
-                //audioSrc.Play();
-                //Debug.Log("playsound");
-                //BackgroundMusicManager.Instance.PlaySound("B_Music_1");
-
-            }
-            else
-            {
-                Pause();
-                //Music.StopMusic();
-                //Sound.StopMusic();
-
+                if (GameIsPaused)
+                {
+                    //BackgroundMusicManager.Instance.PlaySound("B_Music_1");
+                    Resume();
+                    //audioSrc.Play();
+                    //Debug.Log("playsound");
+                    //BackgroundMusicManager.Instance.PlaySound("B_Music_1");
+                }
+                else
+                {
+                    Pause();
+                    //Music.StopMusic();
+                    //Sound.StopMusic();
+                }
             }
         }
     }
+
     public void Resume()
     {
-        //story.UnPauseMusic();
+        audioSrc.UnPause();
         //BackgroundMusicManager.Instance.PlaySound("B_Music_1");
         pauseMenuUI.SetActive(false);
+        PlayerUI.SetActive(true);
         Time.timeScale = 1f;
+        Cursor.visible = false;
         GameIsPaused = false;
     }
 
     void Pause()
     {
-        //story.PauseMusic();
+        audioSrc.Pause();
         pauseMenuUI.SetActive(true);
+        PlayerUI.SetActive(false);
+        Cursor.visible = true;
         Time.timeScale = 0f;
-        StoryIsplaying = false;
         GameIsPaused = true;
     }
 
@@ -75,11 +88,18 @@ public class PauseMenu : MonoBehaviour
         //TODO place Main Menu music
         //BackgroundMusicManager.Instance.PlaySound("MainMenu");
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
 
-    public void GoToOptionsMenu()
+    public void OnMovement(InputAction.CallbackContext context)
     {
-        SceneManager.LoadScene("OptionsMenu");
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+    }
+
+    public void OnLookAround(InputAction.CallbackContext context)
+    {
     }
 }

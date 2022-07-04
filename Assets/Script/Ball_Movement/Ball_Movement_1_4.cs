@@ -45,6 +45,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         RB = this.GetComponent<Rigidbody>();
         Cam = Camera.main;
         CineCamera = FindObjectOfType<CinemachineFreeLook>();
+        SetMouseSensitivity();
 
 
         //Setting private Ball Movement Values
@@ -101,6 +102,12 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         RB.AddForce(Cam_Quat * Input_Direction * BallSpeed);
     }
 
+    public void SetMouseSensitivity()
+    {
+        CineCamera.m_XAxis.m_MaxSpeed = PlayerPrefs.GetFloat("XMouseSensitivity") * 100;
+        CineCamera.m_YAxis.m_MaxSpeed = PlayerPrefs.GetFloat("YMouseSensitivity");
+    }
+
     // Inputs
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -122,8 +129,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     }
 
-    public void OnSwitch(InputAction.CallbackContext context)
+    public void OnPauseMenu(InputAction.CallbackContext context)
     {
-        
     }
 }

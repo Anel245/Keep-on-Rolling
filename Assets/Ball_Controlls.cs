@@ -55,7 +55,7 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Switch"",
+                    ""name"": ""PauseMenu"",
                     ""type"": ""Button"",
                     ""id"": ""83a7d61e-86df-46ac-a252-5a40fe742188"",
                     ""expectedControlType"": ""Button"",
@@ -222,22 +222,22 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""47603eb8-1da8-4bb7-9e32-c54df40d5e31"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Switch"",
+                    ""action"": ""PauseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""0b3d8367-c10f-4f1f-9221-c2a2ea7806a9"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Switch"",
+                    ""action"": ""PauseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -251,7 +251,7 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
         m_Ball_Controls_Movement = m_Ball_Controls.FindAction("Movement", throwIfNotFound: true);
         m_Ball_Controls_Jump = m_Ball_Controls.FindAction("Jump", throwIfNotFound: true);
         m_Ball_Controls_LookAround = m_Ball_Controls.FindAction("Look Around", throwIfNotFound: true);
-        m_Ball_Controls_Switch = m_Ball_Controls.FindAction("Switch", throwIfNotFound: true);
+        m_Ball_Controls_PauseMenu = m_Ball_Controls.FindAction("PauseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -314,7 +314,7 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Ball_Controls_Movement;
     private readonly InputAction m_Ball_Controls_Jump;
     private readonly InputAction m_Ball_Controls_LookAround;
-    private readonly InputAction m_Ball_Controls_Switch;
+    private readonly InputAction m_Ball_Controls_PauseMenu;
     public struct Ball_ControlsActions
     {
         private @Ball_Controlls m_Wrapper;
@@ -322,7 +322,7 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Ball_Controls_Movement;
         public InputAction @Jump => m_Wrapper.m_Ball_Controls_Jump;
         public InputAction @LookAround => m_Wrapper.m_Ball_Controls_LookAround;
-        public InputAction @Switch => m_Wrapper.m_Ball_Controls_Switch;
+        public InputAction @PauseMenu => m_Wrapper.m_Ball_Controls_PauseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Ball_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -341,9 +341,9 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 @LookAround.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookAround;
                 @LookAround.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookAround;
                 @LookAround.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnLookAround;
-                @Switch.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnSwitch;
-                @Switch.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnSwitch;
-                @Switch.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnSwitch;
+                @PauseMenu.started -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnPauseMenu;
+                @PauseMenu.performed -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnPauseMenu;
+                @PauseMenu.canceled -= m_Wrapper.m_Ball_ControlsActionsCallbackInterface.OnPauseMenu;
             }
             m_Wrapper.m_Ball_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -357,9 +357,9 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 @LookAround.started += instance.OnLookAround;
                 @LookAround.performed += instance.OnLookAround;
                 @LookAround.canceled += instance.OnLookAround;
-                @Switch.started += instance.OnSwitch;
-                @Switch.performed += instance.OnSwitch;
-                @Switch.canceled += instance.OnSwitch;
+                @PauseMenu.started += instance.OnPauseMenu;
+                @PauseMenu.performed += instance.OnPauseMenu;
+                @PauseMenu.canceled += instance.OnPauseMenu;
             }
         }
     }
@@ -369,6 +369,6 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLookAround(InputAction.CallbackContext context);
-        void OnSwitch(InputAction.CallbackContext context);
+        void OnPauseMenu(InputAction.CallbackContext context);
     }
 }

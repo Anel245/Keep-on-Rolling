@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Switch",
+                    "name": "PauseMenu",
                     "type": "Button",
                     "id": "83a7d61e-86df-46ac-a252-5a40fe742188",
                     "expectedControlType": "Button",
@@ -200,22 +200,22 @@
                 {
                     "name": "",
                     "id": "47603eb8-1da8-4bb7-9e32-c54df40d5e31",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Switch",
+                    "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "0b3d8367-c10f-4f1f-9221-c2a2ea7806a9",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Switch",
+                    "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
