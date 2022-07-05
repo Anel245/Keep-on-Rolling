@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using MoreMountains.Feedbacks;
 
 public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
 {
@@ -36,6 +37,9 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     private Vector2 XZVelocity;
 
     private Ball_Controlls controlls;
+
+    [Header("Feddbacks")]
+    public MMF_Player jumpFeedback;
 
     private void Awake()
     {
@@ -121,6 +125,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         if (Grounded == true)
         {
             RB.AddForce(Vector3.up * BalljumpForce, ForceMode.Impulse);
+            jumpFeedback.PlayFeedbacks();
         }
     }
 
