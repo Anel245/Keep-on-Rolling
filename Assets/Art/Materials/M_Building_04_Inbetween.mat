@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Building_04
+  m_Name: M_Building_04_Inbetween
   m_Shader: {fileID: -6465566751694194690, guid: e78a6f77f0fbe4d4cb74d45cade3f8a5, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -73,19 +73,21 @@ Material:
     m_Floats:
     - Vector1_4d771d24376e476db244791429b6227f: 0.2
     - Vector1_ee6fc7fc544d4573924a535bb0b6cf4d: 0.5
+    - _Color3Offset: 6.64
     - _ColorLerpOffset: -39
+    - _ColorLerpSmoothness: 0
     - _LerpPower: 1.07
     - _Metallic: 1
     - _Offset: -13.5
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Rotate: 1
+    - _Rotate: 0
     - _Smoothness: 0.5
     m_Colors:
     - Color_5e503ee017354591a6e91aacf8b47c53: {r: 0, g: 0, b: 0, a: 0}
     - Color_b8b0a84e83364c94b2de1ca5d8d76a53: {r: 0.6773169, g: 0.26666662, b: 0.8980392, a: 0}
     - Vector2_a634a8835c9e4436b0a177c187d90f21: {r: 1, g: 1, b: 0, a: 0}
-    - _Color2: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
+    - _Color2: {r: 0.12110402, g: 0.348, b: 0.24263528, a: 0}
     - _Color3: {r: 0.2236116, g: 0.7075472, b: 0.6917094, a: 0}
     - _color: {r: 0, g: 0.6784315, b: 1, a: 0}
   m_BuildTextureStacks: []
