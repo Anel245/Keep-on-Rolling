@@ -14,6 +14,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     [Header("Ball Values")]
     public float BallSpeed;
+    public float GravityScale;
     public float BallAirSpeedControl;
     private float BallGroundSpeed;
     private float BallAirSpeed;
@@ -71,6 +72,10 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     void FixedUpdate()
     {
+        //Apply Gravity
+        Vector3 Gravity = Vector3.down * 9.81f * GravityScale;
+        RB.AddForce(Gravity, ForceMode.Acceleration);
+
         // Is the ball grounded, switching between Airspeed and Groundspeed, switching between Airdrag and Grounddrag
 
         if (Physics.Raycast(transform.position, Vector3.down, GroundcheckLength))

@@ -104,8 +104,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 9199567905169660613}
     m_Modifications:
     - target: {fileID: 170634394, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
+      propertyPath: BallSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 170634394, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
+      propertyPath: GravityScale
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 170634394, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
+      propertyPath: BalljumpForce
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 170634394, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
+      propertyPath: BallAirDragRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 170634394, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
       propertyPath: GroundcheckLength
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 170634394, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
+      propertyPath: BallAirSpeedControl
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1929578080889084625, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
       propertyPath: m_Name
@@ -118,6 +138,14 @@ PrefabInstance:
     - target: {fileID: 1929578080889084626, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
       propertyPath: threshold
       value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929578080889084627, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929578080889084627, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1929578080889084714, guid: 82d376be0b683804fa6e60296c3638e5, type: 3}
       propertyPath: m_RootOrder
