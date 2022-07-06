@@ -16,7 +16,7 @@ public class Save_2 : MonoBehaviour
         //PlayerPrefs.SetString(id,name);
         Debug.Log("You collected " + PlayerPrefs.GetString("name"));
     }
-    public void DeleteSavedData()
+    public void DeleteLastSavedData()
     {
         //when the player dies before touching the next checkpoint delete the data that were saved
         PlayerPrefs.DeleteKey("name");
