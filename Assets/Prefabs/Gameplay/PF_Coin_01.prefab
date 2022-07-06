@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1873710393695149884
+--- !u!1 &2315202907694356848
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1246108415317001606}
-  - component: {fileID: 2802587609977014819}
-  - component: {fileID: 72125612537921257}
-  - component: {fileID: 5641316530199650765}
+  - component: {fileID: 3128471683260908490}
+  - component: {fileID: 2073146761738554479}
+  - component: {fileID: 4260894216747317413}
+  - component: {fileID: 1481055704}
+  - component: {fileID: 1481055703}
   m_Layer: 0
-  m_Name: PF_Long_Platform_01_prefab
+  m_Name: PF_Coin_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1246108415317001606
+--- !u!4 &3128471683260908490
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873710393695149884}
-  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 2315202907694356848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 110.18, y: 11.382, z: -55.075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!33 &2802587609977014819
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2073146761738554479
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873710393695149884}
-  m_Mesh: {fileID: 8842420931406582660, guid: 9dac3f236472cbd4dab360066695dc32, type: 3}
---- !u!23 &72125612537921257
+  m_GameObject: {fileID: 2315202907694356848}
+  m_Mesh: {fileID: -5894363749523588358, guid: caef81cf0d411954c87b741c4f40e460, type: 3}
+--- !u!23 &4260894216747317413
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873710393695149884}
+  m_GameObject: {fileID: 2315202907694356848}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,11 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a5e6d7eb6902cc4aa6c143fa7f32368, type: 2}
-  - {fileID: 2100000, guid: 2a5e6d7eb6902cc4aa6c143fa7f32368, type: 2}
-  - {fileID: 2100000, guid: e6a0b328bb8c26346995ab32b4f30272, type: 2}
-  - {fileID: 2100000, guid: 5a780d051a5c3ee45bf84893a36ee693, type: 2}
-  - {fileID: 2100000, guid: f8570a5f79acd2a4d8163fa801b1a6aa, type: 2}
+  - {fileID: 2100000, guid: 9c7a17c3ff37b294bae43e59dcc2ad16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,17 +85,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5641316530199650765
-MeshCollider:
+--- !u!136 &1481055704
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873710393695149884}
+  m_GameObject: {fileID: 2315202907694356848}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8842420931406582660, guid: 9dac3f236472cbd4dab360066695dc32, type: 3}
+  m_Radius: 0.8051298
+  m_Height: 1.6102597
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8051298, z: 0}
+--- !u!114 &1481055703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315202907694356848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b053bb5269b90469806d52d0cc4efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
+  rotation: {x: 0, y: 1, z: 0}
