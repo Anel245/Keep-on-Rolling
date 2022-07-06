@@ -38,4 +38,18 @@ public class SaveableEntity : MonoBehaviour
         }
     }
 
+    public class Vector3Data
+    {
+        public Vector3Data(Vector3 direction)
+        {
+            Direction = direction;
+        }
+
+        public Vector3 Direction { get; }
+
+        internal Vector3 ToVector3()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
