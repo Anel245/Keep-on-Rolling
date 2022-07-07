@@ -127,7 +127,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (Grounded == true)
+        if (Grounded == true && context.started)
         {
             RB.AddForce(Vector3.up * BalljumpForce, ForceMode.Impulse);
             jumpFeedback.PlayFeedbacks();

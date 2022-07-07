@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1929578080889084629}
   - component: {fileID: 1929578080889084626}
   - component: {fileID: 1212574473980860086}
+  - component: {fileID: 8922751027685753463}
   m_Layer: 0
   m_Name: PF_Player
   m_TagString: Player
@@ -50,15 +51,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2014f716eedb2d478cf48c0dde0aaa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallSpeed: 30
-  BallAirSpeedControl: 0.01
-  BalljumpForce: 3
-  BallAirDragRate: 0.3
+  BallSpeed: 50
+  GravityScale: 1.7
+  BallAirSpeedControl: 0.4
+  BalljumpForce: 10
+  BallAirDragRate: 1
   Trail: {fileID: 638361621113849962}
-  GroundcheckLength: 1.2
+  GroundcheckLength: 1.5
   Cam: {fileID: 0}
   CineCamera: {fileID: 0}
   SmoothTime: 0.1
+  jumpFeedback: {fileID: 0}
 --- !u!54 &1929578080889084627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -68,9 +71,9 @@ Rigidbody:
   m_GameObject: {fileID: 1929578080889084625}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.4
+  m_Drag: 0.1
   m_AngularDrag: 0.08
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -95,12 +98,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929578080889084625}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1cfd2a5df5544944b1f222b45986c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: -15
+  threshold: -20
 --- !u!114 &1212574473980860086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +118,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1929578080889084627}
   velocityName: _Velocity
+--- !u!114 &8922751027685753463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929578080889084625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f5f1cb928b3e1419a5b8f4fc41bfa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1929578080889084625}
+  Fallheight: 20
 --- !u!1001 &707724937687552730
 PrefabInstance:
   m_ObjectHideFlags: 0
