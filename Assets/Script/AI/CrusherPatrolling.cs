@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CrusherPatrolling : MonoBehaviour
+public class Crusher_Patrolling : MonoBehaviour
 {
     NavMeshAgent agent;
     public Transform[] waypoints;
