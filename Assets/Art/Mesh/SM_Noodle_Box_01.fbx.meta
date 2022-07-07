@@ -1,9 +1,39 @@
 fileFormatVersion: 2
 guid: 6d1fc5f5254fde949b598d0773cbbe9e
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Noodle_Box_01_Box
+    second: {fileID: 2100000, guid: 854fe892d8c60654dbbb2985da0b8399, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Noodle_Box_01_Carrots
+    second: {fileID: 2100000, guid: 4505f6380d4ae714f800dfd78e1f1483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Noodle_Box_01_Chopsticks
+    second: {fileID: 2100000, guid: ca87f930b704ee14297a93015d187577, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Noodle_Box_01_Noodles
+    second: {fileID: 2100000, guid: 01f4f0cb9595c5346a62c73225157a39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Noodle_Box_01_Onions
+    second: {fileID: 2100000, guid: 9652bae861f1dfc44895f51957f14ca8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Noodle_Box_01_Plane
+    second: {fileID: 2100000, guid: 01f4f0cb9595c5346a62c73225157a39, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -14,6 +44,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -43,6 +74,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -54,6 +86,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
