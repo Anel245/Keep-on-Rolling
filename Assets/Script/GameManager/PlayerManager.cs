@@ -38,6 +38,7 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("Ouch");
             Player.transform.position = lastCheckPointPos;
+            rb.velocity = Vector3.zero;
         }
     }
 
