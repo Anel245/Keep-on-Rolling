@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public GameObject BallObject;
     
     private FMOD.Studio.EventInstance BallRollingInstance;
+    private FMOD.Studio.EventInstance AmbientSkyInstance;
 
 
 
@@ -25,9 +26,19 @@ public class AudioManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Button_Click");        
     }
 
+    public void Button_Hover()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Button_Hover");
+    }
+
+    public void Button_Cancel()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Button_Cancel");
+    }
+
     void Start()
     {
-        
+        AmbientSkyInstance = FMODUnity.RuntimeManager.CreateInstance("event:/AmbientSky");
     }
 
     public void BallRollingInitialize()
@@ -52,6 +63,19 @@ public class AudioManager : MonoBehaviour
         BallRollingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
+    public void BallImpact(Vector3 BallPosition)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Ball_Impact", BallPosition);
+    }
+
+    public void AmbientSkyStart()
+    {
+        AmbientSkyInstance.start();
+    }
+    public void AmbientSkyStop()
+    {
+        AmbientSkyInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 
     void Update()
     {
