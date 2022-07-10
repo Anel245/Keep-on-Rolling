@@ -7,6 +7,12 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance = null;
 
+    public GameObject BallObject;
+    
+    private FMOD.Studio.EventInstance BallRollingInstance;
+
+
+
     private void Awake()
     {
         instance = this;
@@ -23,6 +29,29 @@ public class AudioManager : MonoBehaviour
     {
         
     }
+
+    public void BallRollingInitialize()
+    {
+        BallRollingInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Ball_Rolling");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(BallRollingInstance, BallObject.GetComponent<Transform>(), BallObject.GetComponent<Rigidbody>());
+        BallRollingInstance.setParameterByName("Speed", 0f);
+    }
+
+    public void BallRollingStart()
+    {
+        BallRollingInstance.start();
+    }
+
+    public void BallRollingSpeedUpdate(float BallSpeed)
+    {
+        BallRollingInstance.setParameterByName("Speed", BallSpeed);
+    }
+
+    public void BallRollingStop()
+    {
+        BallRollingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
 
     void Update()
     {
