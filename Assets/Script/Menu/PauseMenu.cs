@@ -12,7 +12,6 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
     public GameObject PlayerUI;
 
     public GameObject pauseMenuUI;
-    public AudioSource audioSrc;
     private Ball_Controlls controlls;
     //BackgroundMusicManager Music;
     //SoundManager Sound;
@@ -59,7 +58,6 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
 
     public void Resume()
     {
-        audioSrc.UnPause();
         //BackgroundMusicManager.Instance.PlaySound("B_Music_1");
         pauseMenuUI.SetActive(false);
         PlayerUI.SetActive(true);
@@ -70,7 +68,6 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
 
     void Pause()
     {
-        audioSrc.Pause();
         pauseMenuUI.SetActive(true);
         PlayerUI.SetActive(false);
         Cursor.visible = true;

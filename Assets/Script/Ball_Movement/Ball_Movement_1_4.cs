@@ -39,6 +39,11 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
     private Ball_Controlls controlls;
 
+    //FMOD
+    private AudioManager audioManager;
+    public bool RollingPlaying = false;
+    public float MaxSpeed = 60f;
+
     [Header("Feddbacks")]
     public MMF_Player jumpFeedback;
 
@@ -66,6 +71,14 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             controlls = new Ball_Controlls();
             controlls.Enable();
             controlls.Ball_Controls.SetCallbacks(this);
+        }
+
+        //FMOD
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            audioManager.BallObject = gameObject;
+            audioManager.BallRollingInitialize();
         }
     }
 
@@ -109,6 +122,22 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         Cam_Quat = Quaternion.Euler(0f, Cam_rotation, 0f);
         Input_Direction = new Vector3(Horizontal_Input, 0f, Vertical_Input).normalized;
         RB.AddForce(Cam_Quat * Input_Direction * BallSpeed);
+
+        //FMOD RollSound
+        if (Grounded == true && RB.velocity.magnitude > 0 && RollingPlaying == false)
+        {
+            audioManager.BallRollingStart();
+            RollingPlaying = true;
+        }
+        if ((Grounded == false && RollingPlaying == true) || (RB.velocity.magnitude == 0 && RollingPlaying == true))
+        {
+            audioManager.BallRollingStop();
+            RollingPlaying = false;
+        }
+        if (RollingPlaying == true)
+        {
+            audioManager.BallRollingSpeedUpdate(Mathf.Clamp((RB.velocity.magnitude/MaxSpeed),0f,1f));
+        }
     }
 
     public void SetMouseSensitivity()
