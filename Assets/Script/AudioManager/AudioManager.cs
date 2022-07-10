@@ -14,20 +14,16 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    void Button_Click()
+    public void Button_Click()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Button_Click");        
     }
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
