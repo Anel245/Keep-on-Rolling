@@ -77,6 +77,47 @@ public class AudioManager : MonoBehaviour
         AmbientSkyInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
+    public void Bounce(Vector3 BallPosition)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Bounce", BallPosition);
+    }
+
+    public void Jump(Vector3 BallPosition)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Jump", BallPosition);
+    }
+
+    public void Collectible()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Collectible");
+    }
+
+    public void Spec_Collectible()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Spec_Collectible");
+    }
+
+    public void Boost()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Boost");
+    }
+
+    public void Checkpoint()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Checkpoint");
+    }
+
+    public void Enemy_Collision_Respawn()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy_Collision_Respawn");
+    }
+
+    public void Falldown_Failure()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Falldown_Failure");
+    }
+
+
     void Update()
     {
         
