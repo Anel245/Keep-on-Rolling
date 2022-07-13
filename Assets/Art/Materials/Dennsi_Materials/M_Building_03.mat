@@ -61,6 +61,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 6785e6de76701e040b35070f91880694, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_487d8235197443f9a711819d4529532d_Out_0:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -101,6 +105,7 @@ Material:
     - _H_ColorLerpSmooth_Step_1: 0.04
     - _LerpPower: 1.07
     - _Metallic: 0.26
+    - _NormalStrength: 0.152
     - _Offset: -24.4
     - _OffsetColor3: 20.7
     - _PowerGradientV: 1.14
@@ -119,5 +124,6 @@ Material:
     - _ColorLerpVertical_1: {r: 0, g: 1, b: 0.37722206, a: 0}
     - _ColorLerpVertical_2: {r: 0, g: 0.26041746, b: 1, a: 0}
     - _NoiseScale: {r: 1, g: 1, b: 0, a: 0}
+    - _NormalTiling: {r: 1.97, g: 2.95, b: 0, a: 0}
     - _color: {r: 0.8018868, g: 0.38203096, b: 0.38655916, a: 0}
   m_BuildTextureStacks: []
