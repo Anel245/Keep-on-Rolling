@@ -57,6 +57,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BaseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -85,6 +89,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -94,6 +106,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_487d8235197443f9a711819d4529532d_Out_0:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -123,6 +139,8 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorLerpOffset: -24.55
+    - _ColorLerpPower: 2
+    - _ColorRotation: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -132,11 +150,17 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _GradientSwitch: 0
+    - _H_ColorLerpOffset: 0
+    - _H_ColorLerpSmooth_Step_1: 1.75
     - _LerpPower: 1.07
     - _Metallic: 0.5
+    - _NormalStrength: 0.1
     - _OcclusionStrength: 1
     - _Offset: -10.73
+    - _OffsetColor3: 0.17
     - _Parallax: 0.005
+    - _PowerGradientV: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -147,6 +171,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _V_ColorLerpOffset: 0.28
+    - _V_ColorLerpSmooth_Step: 1.75
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -157,7 +183,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 0}
     - _Color3: {r: 0.29783732, g: 0.6509434, b: 0.4262395, a: 0}
+    - _ColorLerpVertical_1: {r: 1, g: 0.8427867, b: 0, a: 0}
+    - _ColorLerpVertical_2: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _NoiseScale: {r: 1, g: 1, b: 0, a: 0}
+    - _NormalTiling: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _color: {r: 0.3333333, g: 0.59749657, b: 0.8784314, a: 0}
   m_BuildTextureStacks: []
