@@ -136,20 +136,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "62824cbcf813a18cbe9db417e83687f7"
-                },
-                "m_SlotId": 1
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "96bf5a73955b578ab2e5283cb3cf0c3d"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "83d27d0bb4e0d38f88fb468cf1b497e8"
                 },
                 "m_SlotId": 2
@@ -171,6 +157,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "1febdb436ed94d35843fe95958ba915e"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "8980f261ffaf1780ad80ee3ce1fbe662"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "96bf5a73955b578ab2e5283cb3cf0c3d"
                 },
                 "m_SlotId": 0
             }
@@ -1074,7 +1074,7 @@
     "m_DefaultRefNameVersion": 0,
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_AAD27104",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_dissolveGrade",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
@@ -1082,7 +1082,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.0,
+    "m_Value": -1.0,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": -1.0,

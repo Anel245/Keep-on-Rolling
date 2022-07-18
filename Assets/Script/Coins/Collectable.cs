@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using MoreMountains.Feedbacks;
 
 public class Collectable : MonoBehaviour, ISaveable
 {
@@ -13,6 +14,9 @@ public class Collectable : MonoBehaviour, ISaveable
 
     public float coin;
     public Score Scorescript;
+
+    [Header("Feedbacks")]
+    public MMF_Player collectedFeedback;
 
     public object SaveState()
     {
@@ -41,7 +45,8 @@ public class Collectable : MonoBehaviour, ISaveable
     {
         Score.theScore += 1;
         Scorescript.Collected();
-        Destroy(gameObject);
+        collectedFeedback.PlayFeedbacks();
+        //Destroy(gameObject);
     }
 
     //private void OnTriggerEnter(Collider other)

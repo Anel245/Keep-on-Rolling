@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using MoreMountains.Feedbacks;
 
 public class CheckPoint : MonoBehaviour, ISaveable
 {
     public float Checkpoint;
     public GameObject SavedIcon;
+
+    public MMF_Player checkpointReachedFeedback;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -16,6 +19,10 @@ public class CheckPoint : MonoBehaviour, ISaveable
             Debug.Log("test");
             PlayerManager.lastCheckPointPos = transform.position;
             StartCoroutine(IconWait());
+            if (checkpointReachedFeedback != null)
+            {
+                checkpointReachedFeedback.PlayFeedbacks();
+            }
         }
     }
 
