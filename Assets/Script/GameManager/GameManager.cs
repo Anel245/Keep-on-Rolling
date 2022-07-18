@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("LevelWon");
         completeGameUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
     }
