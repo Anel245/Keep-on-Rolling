@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6d1fc5f5254fde949b598d0773cbbe9e
+guid: de09d535e848b6741a9cbb664948246d
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -7,33 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Noodle_Box_01_Box
+      name: M_Noodle_Box_Box
     second: {fileID: 2100000, guid: 854fe892d8c60654dbbb2985da0b8399, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Noodle_Box_01_Carrots
+      name: M_Noodle_Box_Carrots
     second: {fileID: 2100000, guid: 4505f6380d4ae714f800dfd78e1f1483, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Noodle_Box_01_Chopsticks
+      name: M_Noodle_Box_Chopsticks
     second: {fileID: 2100000, guid: ca87f930b704ee14297a93015d187577, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Noodle_Box_01_Noodles
+      name: M_Noodle_Box_Noodles
     second: {fileID: 2100000, guid: 01f4f0cb9595c5346a62c73225157a39, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Noodle_Box_01_Onions
+      name: M_Noodle_Box_Onions
     second: {fileID: 2100000, guid: 9652bae861f1dfc44895f51957f14ca8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Noodle_Box_01_Plane
-    second: {fileID: 2100000, guid: 01f4f0cb9595c5346a62c73225157a39, type: 2}
+      name: M_Noodle_Box_Plane
+    second: {fileID: 2100000, guid: 854fe892d8c60654dbbb2985da0b8399, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -44,7 +44,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -74,7 +74,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
+    nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0

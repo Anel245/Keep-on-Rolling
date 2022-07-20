@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8934795558820382362}
   m_Layer: 0
-  m_Name: PF_Noodle_Box_01
+  m_Name: PF_Noodle_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,69 +28,69 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1487922481909773234}
+  - {fileID: 1723847579524941572}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1381638478872302681
+--- !u!1001 &1181895014653698287
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8934795558820382362}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
+    - target: {fileID: 919132149155446097, guid: de09d535e848b6741a9cbb664948246d, type: 3}
       propertyPath: m_Name
-      value: C_NoodleBox
+      value: SM_Noodle_Box
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
---- !u!4 &1487922481909773234 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: de09d535e848b6741a9cbb664948246d, type: 3}
+--- !u!4 &1723847579524941572 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d1fc5f5254fde949b598d0773cbbe9e, type: 3}
-  m_PrefabInstance: {fileID: 1381638478872302681}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: de09d535e848b6741a9cbb664948246d, type: 3}
+  m_PrefabInstance: {fileID: 1181895014653698287}
   m_PrefabAsset: {fileID: 0}
