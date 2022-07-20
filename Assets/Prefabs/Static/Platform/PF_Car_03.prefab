@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7241193778961188186}
   m_Layer: 0
-  m_Name: PF_Car_01
+  m_Name: PF_Car_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,6 +83,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2d37c4bb3c3aaed4eb5f80c98c4628d4, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a17cec0e9c64444e828f0bb7fdb8807, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 2d37c4bb3c3aaed4eb5f80c98c4628d4, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cdf78755d41b2439cc4176e634bb3d, type: 2}
     - target: {fileID: 919132149155446097, guid: 2d37c4bb3c3aaed4eb5f80c98c4628d4, type: 3}
       propertyPath: m_Name
       value: SM_Car_01
