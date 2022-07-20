@@ -65,6 +65,7 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         PlayerUI.SetActive(true);
         Time.timeScale = 1f;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         GameIsPaused = false;
     }
 
@@ -74,6 +75,7 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         pauseMenuUI.SetActive(true);
         PlayerUI.SetActive(false);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

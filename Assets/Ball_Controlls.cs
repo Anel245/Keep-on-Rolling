@@ -199,6 +199,17 @@ public partial class @Ball_Controlls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0bf1225a-cb4a-48ff-ad83-0f3d6613974a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""4ffbb2cc-9513-49c1-b11f-6a88b9901b41"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",

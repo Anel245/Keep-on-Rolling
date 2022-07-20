@@ -45,6 +45,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     private void Awake()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
         //Get Rigidbody & Camera
         RB = this.GetComponent<Rigidbody>();
