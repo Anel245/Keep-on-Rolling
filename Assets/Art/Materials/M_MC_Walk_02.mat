@@ -126,6 +126,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _alphaClip: 0.5
     - _iAmStuckStepNoise: 0.3
     - _mainTextureFade: 0.8
     - _maxSpeed: 3
@@ -136,8 +137,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _color01: {r: 0.0055459356, g: 0, b: 1.0592737, a: 1}
-    - _color02: {r: 0, g: 0.13974468, b: 1.3105148, a: 1}
+    - _color01: {r: 0.627451, g: 0, b: 1.5058824, a: 1}
+    - _color02: {r: 0, g: 1.5058824, b: 0.13333334, a: 1}
     - _mainTextureSpeed: {r: -0.7, g: 0, b: 0, a: 0}
     - _noiseTextureDissolveSpeed: {r: -2, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
