@@ -6,36 +6,40 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public TextMeshProUGUI ScoreText;
-    public TextMeshProUGUI FinalScoreText;
+    public GameObject CoinsText;
     public static int theScore;
-    public float Timer;
-    private float PrTimer;
-    private bool Counting;
-    public int MaxScore;
 
     void Update ()
-    {
-        ScoreText.text = "Score: " + theScore;
-        FinalScoreText.text = theScore + "/" + MaxScore;
-
-        if (Counting)
-        {
-            PrTimer += Time.deltaTime;
-        }
-
-        if (PrTimer > Timer)
-        {
-            Counting = false;
-            PrTimer = 0;
-            ScoreText.fontSize = 0;
-        }
+    {     
+        CoinsText.GetComponent<Text>().text = "COINS:" + theScore;       
     }
 
+
+    //int score = 0;
+    //public TextMesh tm;
+    //public static Score instance;
+
+<<<<<<< Updated upstream
+    //void Start()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //    }
+    //}
+
+    //public void AddScore()
+    //{
+    //    score++;
+    //    tm.text = score.ToString();
+    //}
+=======
     public void Collected()
     {
+        theScore++;
         ScoreText.fontSize = 50;
         Counting = true;
         PrTimer = 0;
     }
+>>>>>>> Stashed changes
 }
