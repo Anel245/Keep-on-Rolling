@@ -8,11 +8,9 @@ public class TimerManager : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI highScore;
-    public float startTime;
+    private float startTime;
     private float EndTime;
     private bool finnished = false;
-
-    public float t;
     
 
     void Start()
@@ -43,7 +41,7 @@ public class TimerManager : MonoBehaviour
         else
         {
 
-         t = Time.time - startTime;
+        float t = Time.time - startTime;
 
         string minutes = ((int)t / 60).ToString();
         string seconds = (t % 60).ToString("f1");
@@ -56,11 +54,6 @@ public class TimerManager : MonoBehaviour
     {
         finnished = true;
         TimerText.color = Color.red;
-    }
-    public float GetFinnished()
-    {
-        Debug.Log("Finnish" +t);
-        return t;
     }
 
 

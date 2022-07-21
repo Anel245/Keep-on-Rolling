@@ -2,47 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using MoreMountains.Feedbacks;
 
-public class Collectable : MonoBehaviour /*ISaveable*/
+public class Collectable : MonoBehaviour, ISaveable
 {
+    [SerializeField]
+    private float rotationSpeed;
+
+    [SerializeField]
+    private Vector3 rotation = Vector3.up;
 
     public float coin;
-    //public object SaveState()
-    //{
-    //    return new SaveData()
-    //    {
-    //        coin = this.coin
-    //    };
-    //}
-    //public void LoadState(object state)
-    //{
-    //    var saveData = (SaveData)state;
-    //   coin = saveData.coin; ;
-    //}
-    //[Serializable]
-    //private struct SaveData
-    //{
-    //    public float coin;
-    //}
+    public Score Scorescript;
 
-<<<<<<< Updated upstream
+    [Header("Feedbacks")]
+    public MMF_Player collectedFeedback;
 
-    void OnTriggerEnter(Collider other)
+    public object SaveState()
     {
-        Score.theScore += 1;
-        //SaveCoin()
-=======
+        return new SaveData()
+        {
+            coin = this.coin
+        };
+    }
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        coin = saveData.coin; ;
+    }
+    [Serializable]
+    private struct SaveData
+    {
+        public float coin;
+    }
+
     private void Awake()
     {
-        Scorescript = GameObject.Find("CoinsSystem").GetComponent<Score>();
+        Scorescript = GameObject.Find("Score").GetComponent<Score>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        
+        Score.theScore += 1;
         Scorescript.Collected();
->>>>>>> Stashed changes
-        Destroy(gameObject);
+        collectedFeedback.PlayFeedbacks();
+        //Destroy(gameObject);
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -50,4 +54,9 @@ public class Collectable : MonoBehaviour /*ISaveable*/
     //    Score.instance.AddScore();
     //    Destroy(gameObject);
     //}
+
+    private void Update()
+    {
+        transform.Rotate(rotation, rotationSpeed * Time.deltaTime);
+    }
 }
