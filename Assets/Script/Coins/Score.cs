@@ -19,6 +19,7 @@ public class Score : MonoBehaviour
     //public TextMesh tm;
     //public static Score instance;
 
+<<<<<<< Updated upstream
     //void Start()
     //{
     //    if (instance == null)
@@ -32,4 +33,13 @@ public class Score : MonoBehaviour
     //    score++;
     //    tm.text = score.ToString();
     //}
+=======
+    public void Collected()
+    {
+        theScore++;
+        ScoreText.fontSize = 50;
+        Counting = true;
+        PrTimer = 0;
+    }
+>>>>>>> Stashed changes
 }

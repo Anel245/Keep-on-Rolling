@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+<<<<<<< Updated upstream
 public class CheckPoint : MonoBehaviour/* ISaveable*/
+=======
+public class CheckPoint : MonoBehaviour
+>>>>>>> Stashed changes
 {
     public float Checkpoint;
 
@@ -16,6 +20,16 @@ public class CheckPoint : MonoBehaviour/* ISaveable*/
         }
         
     }
+<<<<<<< Updated upstream
+=======
+    IEnumerator IconWait()
+    {
+        SavedIcon.SetActive(true);
+        yield return new WaitForSeconds(3);
+        SavedIcon.SetActive(false);
+    }
+
+>>>>>>> Stashed changes
     //public object SaveState()
     //{
     //    return new SaveData()

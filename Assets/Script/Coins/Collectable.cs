@@ -25,11 +25,23 @@ public class Collectable : MonoBehaviour /*ISaveable*/
     //    public float coin;
     //}
 
+<<<<<<< Updated upstream
 
     void OnTriggerEnter(Collider other)
     {
         Score.theScore += 1;
         //SaveCoin()
+=======
+    private void Awake()
+    {
+        Scorescript = GameObject.Find("CoinsSystem").GetComponent<Score>();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        
+        Scorescript.Collected();
+>>>>>>> Stashed changes
         Destroy(gameObject);
     }
 
