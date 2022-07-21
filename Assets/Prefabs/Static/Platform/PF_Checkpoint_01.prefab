@@ -319,7 +319,6 @@ GameObject:
   - component: {fileID: 2932773589312888110}
   - component: {fileID: 2241831225657086603}
   - component: {fileID: 4105139735129466433}
-  - component: {fileID: 5948572672804936072}
   - component: {fileID: 5121007859382268699}
   m_Layer: 0
   m_Name: PF_Checkpoint_01
@@ -411,20 +410,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5948572672804936072
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2591996025230329748}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7845999042757448750, guid: 73f451cafea2540479a9086162d58982, type: 3}
 --- !u!95 &5121007859382268699
 Animator:
   serializedVersion: 4
@@ -941,6 +926,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
+--- !u!1 &4132547553560283506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -674270451563137521, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
+  m_PrefabInstance: {fileID: 5763834025585655677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8695279848745186489
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132547553560283506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3140596421991457883, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
 --- !u!4 &5221917168348354710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
