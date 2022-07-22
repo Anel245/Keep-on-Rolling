@@ -923,6 +923,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: 5a780d051a5c3ee45bf84893a36ee693, type: 2}
+    - target: {fileID: -3843943009854773706, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8570a5f79acd2a4d8163fa801b1a6aa, type: 2}
     - target: {fileID: 680248540243365671, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -931,27 +935,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Checkpoint_Platform_01
       objectReference: {fileID: 0}
+    - target: {fileID: 9189823199264411771, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
---- !u!1 &864148153547730177 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4900851704688415356, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
-  m_PrefabInstance: {fileID: 5763834025585655677}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &4697184073642724532
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864148153547730177}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1588045309939904065, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
 --- !u!4 &5221917168348354710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
