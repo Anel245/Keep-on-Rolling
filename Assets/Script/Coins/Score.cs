@@ -14,6 +14,11 @@ public class Score : MonoBehaviour
     private bool Counting;
     public int MaxScore;
 
+    private void Awake()
+    {
+        theScore = 0;
+    }
+
     void Update ()
     {
         ScoreText.text = "Score: " + theScore;

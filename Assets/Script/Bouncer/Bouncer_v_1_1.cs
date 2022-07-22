@@ -11,6 +11,13 @@ public class Bouncer_v_1_1 : MonoBehaviour
     private Rigidbody Player_RB;
     private Vector3 BounceDirection;
 
+    public GameObject Player;
+
+    private void Update()
+    {
+        transform.LookAt(new Vector3(Player.transform.position.x,transform.position.y,Player.transform.position.z));
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Player_RB = other.GetComponent<Rigidbody>();
