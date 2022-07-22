@@ -14,6 +14,9 @@ public class Score : MonoBehaviour
     private bool Counting;
     public int MaxScore;
 
+    public GameObject AllCollected;
+    public GameObject NotAllCollected;
+
     private void Awake()
     {
         theScore = 0;
@@ -34,6 +37,12 @@ public class Score : MonoBehaviour
             Counting = false;
             PrTimer = 0;
             ScoreText.fontSize = 0;
+        }
+
+        if (theScore == MaxScore)
+        {
+            AllCollected.SetActive(true);
+            NotAllCollected.SetActive(false);
         }
     }
 
