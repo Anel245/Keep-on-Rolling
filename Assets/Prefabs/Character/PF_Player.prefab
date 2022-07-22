@@ -57,10 +57,13 @@ MonoBehaviour:
   BalljumpForce: 10
   BallAirDragRate: 1
   Trail: {fileID: 638361621113849962}
-  GroundcheckLength: 1.5
+  GroundcheckLength: 1.1
+  Dead: 0
   Cam: {fileID: 0}
   CineCamera: {fileID: 0}
   SmoothTime: 0.15
+  RollingPlaying: 0
+  MaxSpeed: 60
   jumpFeedback: {fileID: 0}
 --- !u!54 &1929578080889084627
 Rigidbody:
@@ -132,6 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1929578080889084625}
   Fallheight: 20
+  deathFeedbackFinished: 0
+  deathFeedback: {fileID: 0}
+  deathFeedbackActive: 0
+  audioManager: {fileID: 0}
 --- !u!1001 &707724937687552730
 PrefabInstance:
   m_ObjectHideFlags: 0

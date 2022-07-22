@@ -6,51 +6,73 @@ public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager instance = null;
-
-    public GameObject BallObject;
     
     private FMOD.Studio.EventInstance BallRollingInstance;
     private FMOD.Studio.EventInstance AmbientSkyInstance;
-
-
+    private FMOD.Studio.EventInstance EnemyMoveInstance;
+    public List<FMOD.Studio.EventInstance> EnemyMoveInstances;
 
     private void Awake()
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
+        AmbientSkyInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/AmbientSky");
+    }
 
+    private void Start()
+    {
+        AmbientSkyStart();
     }
 
     public void Button_Click()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Button_Click");        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Button_Click");        
     }
 
     public void Button_Hover()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Button_Hover");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Button_Hover");
     }
 
     public void Button_Cancel()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Button_Cancel");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Button_Cancel");
     }
 
-    void Start()
+    public void EnemyMoveInitialize(Transform EnemyTransform, Rigidbody EnemyRigidbody)
     {
-        AmbientSkyInstance = FMODUnity.RuntimeManager.CreateInstance("event:/AmbientSky");
+        EnemyMoveInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Enemy_Movement");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(EnemyMoveInstance, EnemyTransform, EnemyRigidbody);
+        EnemyMoveInstance.start();
+        //EnemyMoveInstances.Add(EnemyMoveInstance);
+    }
+    public void EnemyMovesStart()
+    {
+        foreach (var Instance in EnemyMoveInstances)
+        {
+            Instance.start();
+        }
     }
 
-    public void BallRollingInitialize()
+    public void EnemyMovesStop()
     {
-        BallRollingInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Ball_Rolling");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(BallRollingInstance, BallObject.GetComponent<Transform>(), BallObject.GetComponent<Rigidbody>());
+        foreach (var Instance in EnemyMoveInstances)
+        {
+            Instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
+    public void BallRollingInitialize(Transform Balltransform, Rigidbody BallRigidbody)
+    {
+        BallRollingInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Ball_Rolling");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(BallRollingInstance, Balltransform, BallRigidbody);
         BallRollingInstance.setParameterByName("Speed", 0f);
     }
 
-    public void BallRollingStart()
+    public void BallRollingStart(Transform Balltransform, Rigidbody BallRigidbody)
     {
         BallRollingInstance.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(BallRollingInstance, Balltransform, BallRigidbody);
     }
 
     public void BallRollingSpeedUpdate(float BallSpeed)
@@ -65,7 +87,7 @@ public class AudioManager : MonoBehaviour
 
     public void BallImpact(Vector3 BallPosition)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Ball_Impact", BallPosition);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/3D/Ball_Impact", BallPosition);
     }
 
     public void AmbientSkyStart()
@@ -79,42 +101,47 @@ public class AudioManager : MonoBehaviour
 
     public void Bounce(Vector3 BallPosition)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Bounce", BallPosition);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/3D/Bounce", BallPosition);
     }
 
     public void Jump(Vector3 BallPosition)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Jump", BallPosition);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/3D/Jump", BallPosition);
     }
 
     public void Collectible()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Collectible");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Collectible");
     }
 
     public void Spec_Collectible()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Spec_Collectible");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Spec_Collectible");
     }
 
     public void Boost()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Boost");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Boost");
     }
 
     public void Checkpoint()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Checkpoint");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Checkpoint");
     }
 
     public void Enemy_Collision_Respawn()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy_Collision_Respawn");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Enemy_Collision_Respawn");
     }
 
     public void Falldown_Failure()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Falldown_Failure");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Falldown_Failure");
+    }
+
+    public void FinishLevel()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Finish_Level");
     }
 
 

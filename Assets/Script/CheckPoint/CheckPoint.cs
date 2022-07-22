@@ -11,16 +11,26 @@ public class CheckPoint : MonoBehaviour, ISaveable
     public GameObject SavedIcon;
 
     public MMF_Player checkpointReachedFeedback;
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("test");
+            Debug.Log("CheckpointActivated");
             PlayerManager.lastCheckPointPos = transform.position;
             StartCoroutine(IconWait());
             if (checkpointReachedFeedback != null)
             {
+                audioManager.Checkpoint();
                 checkpointReachedFeedback.PlayFeedbacks();
             }
         }

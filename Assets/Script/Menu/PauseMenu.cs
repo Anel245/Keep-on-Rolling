@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
 
     public GameObject pauseMenuUI;
     private Ball_Controlls controlls;
+    public AudioManager audioManager;
     //BackgroundMusicManager Music;
     //SoundManager Sound;
     //Story story;
@@ -22,7 +23,10 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         //Music = GameObject.Find("BackgroundMusicManager").GetComponent<BackgroundMusicManager>();
         //Sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         //story = GameObject.Find("Player").GetComponent<Story>();
-
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
         //Get controller
         if (controlls == null)
         {
@@ -65,6 +69,8 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         GameIsPaused = false;
+        audioManager.BallRollingStart(transform, new Rigidbody());
+        //audioManager.EnemyMovesStart();
     }
 
     void Pause()
@@ -75,6 +81,8 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         GameIsPaused = true;
+        audioManager.BallRollingStop();
+        //audioManager.EnemyMovesStop();
     }
 
     public void QuitGame()
@@ -88,6 +96,21 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         //BackgroundMusicManager.Instance.PlaySound("MainMenu");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
+
+    public void Button_Click()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Button_Click");
+    }
+
+    public void Button_Hover()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Button_Hover");
+    }
+
+    public void Button_Cancel()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Button_Cancel");
     }
 
     public void OnMovement(InputAction.CallbackContext context)
