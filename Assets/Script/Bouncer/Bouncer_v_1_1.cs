@@ -12,6 +12,15 @@ public class Bouncer_v_1_1 : MonoBehaviour
     private Vector3 BounceDirection;
 
     public GameObject Player;
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
+    }
 
     private void Update()
     {
@@ -23,5 +32,6 @@ public class Bouncer_v_1_1 : MonoBehaviour
         Player_RB = other.GetComponent<Rigidbody>();
         BounceDirection = Player_RB.velocity.normalized + ((other.transform.position - transform.position).normalized * 1.4f); 
         Player_RB.AddForce(BounceDirection.normalized * ((Player_RB.velocity.magnitude * KeepVelocity) +1) * Bounceforce, ForceMode.Impulse);
+        audioManager.Bounce(transform.position);
     }
 }

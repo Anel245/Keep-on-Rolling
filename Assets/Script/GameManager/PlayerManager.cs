@@ -12,6 +12,8 @@ public class PlayerManager : MonoBehaviour
     public bool deathFeedbackFinished;
     public MMF_Player deathFeedback;
     public bool deathFeedbackActive;
+    public AudioManager audioManager;
+
 
     void Update()
     {
@@ -21,6 +23,8 @@ public class PlayerManager : MonoBehaviour
             if (deathFeedback != null && !deathFeedbackActive)
             {
                 deathFeedbackActive = true;
+                Player.GetComponent<Ball_Movement_1_4>().Dead = true;
+                audioManager.Falldown_Failure();
                 deathFeedback.PlayFeedbacks();
             }
             //Player.transform.position = lastCheckPointPos;
@@ -35,6 +39,7 @@ public class PlayerManager : MonoBehaviour
             Debug.Log(lastCheckPointPos);
             Debug.Log(Player.transform.position);
             deathFeedbackFinished = false;
+            Player.GetComponent<Ball_Movement_1_4>().Dead = false;
         }
         //if (Player.transform.position = lastCheckPointPos)
         //{
@@ -47,6 +52,10 @@ public class PlayerManager : MonoBehaviour
         //GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
         lastCheckPointPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         rb = Player.GetComponent<Rigidbody>();
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -54,8 +63,11 @@ public class PlayerManager : MonoBehaviour
         if (collision.tag == "Crusher")
         {
             Debug.Log("Ouch");
-            Player.transform.position = lastCheckPointPos;
+            audioManager.Enemy_Collision_Respawn();
+            deathFeedbackActive = true;
+            Player.GetComponent<Ball_Movement_1_4>().Dead = true;
             rb.velocity = Vector3.zero;
+            deathFeedback.PlayFeedbacks();
         }
     }
 

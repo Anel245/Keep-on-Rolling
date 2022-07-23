@@ -26,6 +26,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     public float GroundcheckLength;
 
     private bool Grounded;
+    public bool Dead;
 
 
     [Header("Camera")]
@@ -38,6 +39,11 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     private Vector2 XZVelocity;
 
     private Ball_Controlls controlls;
+
+    //FMOD
+    private AudioManager audioManager;
+    public bool RollingPlaying = false;
+    public float MaxSpeed = 60f;
 
     [Header("Feddbacks")]
     public MMF_Player jumpFeedback;
@@ -69,7 +75,15 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             controlls.Ball_Controls.SetCallbacks(this);
         }
     }
-
+    private void Start()
+    {
+        //FMOD
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            audioManager.BallRollingInitialize(transform, RB);
+        }
+    }
 
     void FixedUpdate()
     {
@@ -79,7 +93,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
         // Is the ball grounded, switching between Airspeed and Groundspeed, switching between Airdrag and Grounddrag
 
-        if (Physics.Raycast(transform.position, Vector3.down, GroundcheckLength))
+        if (Physics.Raycast(transform.position + new Vector3(0.7f, 0, 0.7f), Vector3.down, GroundcheckLength) || Physics.Raycast(transform.position + new Vector3(-0.7f, 0, 0.7f), Vector3.down, GroundcheckLength) || Physics.Raycast(transform.position + new Vector3(-0.7f, 0, -0.7f), Vector3.down, GroundcheckLength) || Physics.Raycast(transform.position + new Vector3(0.7f, 0, -0.7f), Vector3.down, GroundcheckLength))
         {
             Grounded = true;
         }
@@ -110,6 +124,22 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         Cam_Quat = Quaternion.Euler(0f, Cam_rotation, 0f);
         Input_Direction = new Vector3(Horizontal_Input, 0f, Vertical_Input).normalized;
         RB.AddForce(Cam_Quat * Input_Direction * BallSpeed);
+
+        //FMOD RollSound
+        if (Grounded == true && RB.velocity.magnitude > 0 && RollingPlaying == false)
+        {
+            audioManager.BallRollingStart(transform, RB);
+            RollingPlaying = true;
+        }
+        if ((Grounded == false && RollingPlaying == true) || (RB.velocity.magnitude == 0 && RollingPlaying == true))
+        {
+            audioManager.BallRollingStop();
+            RollingPlaying = false;
+        }
+        if (RollingPlaying == true)
+        {
+            audioManager.BallRollingSpeedUpdate(Mathf.Clamp((RB.velocity.magnitude/MaxSpeed),0f,1f));
+        }
     }
 
     public void SetMouseSensitivity()
@@ -118,20 +148,29 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
         CineCamera.m_YAxis.m_MaxSpeed = PlayerPrefs.GetFloat("YMouseSensitivity");
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        //audioManager.BallImpact(transform.position);
+    }
+
     // Inputs
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        Horizontal_Input = context.ReadValue<Vector2>().x;
-        Vertical_Input = context.ReadValue<Vector2>().y;
+        if (Dead == false)
+        {
+            Horizontal_Input = context.ReadValue<Vector2>().x;
+            Vertical_Input = context.ReadValue<Vector2>().y;
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (Grounded == true && context.started)
+        if (Grounded == true && context.started && Dead == false)
         {
             RB.AddForce(Vector3.up * BalljumpForce, ForceMode.Impulse);
             jumpFeedback.PlayFeedbacks();
+            audioManager.Jump(transform.position);
         }
     }
 

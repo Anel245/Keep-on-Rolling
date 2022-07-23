@@ -18,12 +18,18 @@ public class Crusher_Patrolling : MonoBehaviour
     public float fraction;
 
     public Rigidbody rb;
-
+    private AudioManager audioManager;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         UpdateDestination();
+        rb = GetComponent<Rigidbody>();
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
+        audioManager.EnemyMoveInitialize(transform,rb);
         //rb.velocity = new Vector3(speed * Time.deltaTime, rb.velocity.z);
     }
 

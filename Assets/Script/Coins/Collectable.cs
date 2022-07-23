@@ -17,6 +17,7 @@ public class Collectable : MonoBehaviour, ISaveable
 
     [Header("Feedbacks")]
     public MMF_Player collectedFeedback;
+    public AudioManager audioManager;
 
     public object SaveState()
     {
@@ -39,6 +40,10 @@ public class Collectable : MonoBehaviour, ISaveable
     private void Awake()
     {
         Scorescript = GameObject.Find("Score").GetComponent<Score>();
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -46,6 +51,7 @@ public class Collectable : MonoBehaviour, ISaveable
         Score.theScore += 1;
         Scorescript.Collected();
         collectedFeedback.PlayFeedbacks();
+        audioManager.Collectible();
         //Destroy(gameObject);
     }
 

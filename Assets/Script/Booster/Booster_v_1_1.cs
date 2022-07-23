@@ -10,6 +10,15 @@ public class Booster_v_1_1 : MonoBehaviour
     private Rigidbody Player_RB;
 
     public bool active;
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        if (GameObject.Find("AudioManager") != null)
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +32,7 @@ public class Booster_v_1_1 : MonoBehaviour
         Player_RB = collision.gameObject.GetComponent<Rigidbody>();
         //Player_RB.velocity = Boostforce * transform.TransformDirection(Vector3.forward);
         //Player_RB.AddForce(Boostforce * transform.TransformDirection(Vector3.forward), ForceMode.Impulse);
+        audioManager.Boost();
     }
 
     private void OnCollisionExit(Collision collision)
