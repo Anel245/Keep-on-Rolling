@@ -62,6 +62,34 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void FlyingCarInitialize(Transform FlyingCarTransform, Rigidbody FlyingCarRigidbody)
+    {
+        FMOD.Studio.EventInstance FlyingCarInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Flying_Car");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(FlyingCarInstance, FlyingCarTransform, FlyingCarRigidbody);
+        FlyingCarInstance.start();
+    }
+
+    public void HologramInitialize(Transform HologramTransform, Rigidbody HologramRigidbody)
+    {
+        FMOD.Studio.EventInstance HologramInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Hologram");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(HologramInstance, HologramTransform, HologramRigidbody);
+        HologramInstance.start();
+    }
+
+    public void VentilationInitialize(Transform VentilationTransform, Rigidbody VentilationRigidbody)
+    {
+        FMOD.Studio.EventInstance VentilationInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Ventilation");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(VentilationInstance, VentilationTransform, VentilationRigidbody);
+        VentilationInstance.start();
+    }
+
+    public void SparkingCableInitialize(Transform SparkingCableTransform, Rigidbody SparkingCableRigidbody)
+    {
+        FMOD.Studio.EventInstance SparkingCableInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Sparking_Cable");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(SparkingCableInstance, SparkingCableTransform, SparkingCableRigidbody);
+        SparkingCableInstance.start();
+    }
+
     public void BallRollingInitialize(Transform Balltransform, Rigidbody BallRigidbody)
     {
         BallRollingInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Ball_Rolling");
