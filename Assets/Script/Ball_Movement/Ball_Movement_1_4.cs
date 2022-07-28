@@ -48,6 +48,8 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     [Header("Feedbacks")]
     public MMF_Player jumpFeedback;
     public MMF_Player sausageCollisionFeedback;
+    public MMF_Player landingFeedback;
+    public ParticleSystem dustTrail;
 
     private void Awake()
     {
@@ -96,11 +98,21 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
 
         if (Physics.Raycast(transform.position + new Vector3(0.7f, 0, 0.7f), Vector3.down, GroundcheckLength) || Physics.Raycast(transform.position + new Vector3(-0.7f, 0, 0.7f), Vector3.down, GroundcheckLength) || Physics.Raycast(transform.position + new Vector3(-0.7f, 0, -0.7f), Vector3.down, GroundcheckLength) || Physics.Raycast(transform.position + new Vector3(0.7f, 0, -0.7f), Vector3.down, GroundcheckLength))
         {
+            if (Grounded == false)
+            {
+                landingFeedback.PlayFeedbacks();
+            }
             Grounded = true;
+            dustTrail.gameObject.transform.position = this.gameObject.transform.position;
+            dustTrail.gameObject.transform.position += new Vector3(0, -0.5f, 0);
+            dustTrail.gameObject.SetActive(true);
+            //dustTrail.gameObject.transform.position.y = -0.5;
+
         }
         else
         {
             Grounded = false;
+            dustTrail.gameObject.SetActive(false);
         }
 
         if (Grounded == true)
