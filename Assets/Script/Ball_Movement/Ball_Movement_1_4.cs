@@ -45,8 +45,9 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     public bool RollingPlaying = false;
     public float MaxSpeed = 60f;
 
-    [Header("Feddbacks")]
+    [Header("Feedbacks")]
     public MMF_Player jumpFeedback;
+    public MMF_Player sausageCollisionFeedback;
 
     private void Awake()
     {
@@ -151,6 +152,10 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     private void OnCollisionEnter(Collision collision)
     {
         //audioManager.BallImpact(transform.position);
+        if (collision.gameObject.tag == "Sausage")
+        {
+            sausageCollisionFeedback.PlayFeedbacks(collision.contacts[0].point);
+        }
     }
 
     // Inputs

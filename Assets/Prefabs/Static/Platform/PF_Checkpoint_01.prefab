@@ -107,6 +107,7 @@ MonoBehaviour:
   Checkpoint: 3
   SavedIcon: {fileID: 0}
   checkpointReachedFeedback: {fileID: 1325486589828326050}
+  audioManager: {fileID: 0}
 --- !u!1 &432211889971080508
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +913,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f8570a5f79acd2a4d8163fa801b1a6aa, type: 2}
+    - target: {fileID: -674270451563137521, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
+      propertyPath: m_TagString
+      value: Sausage
+      objectReference: {fileID: 0}
     - target: {fileID: 680248540243365671, guid: 19d7541de682ef841b64b161ff4817cd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
