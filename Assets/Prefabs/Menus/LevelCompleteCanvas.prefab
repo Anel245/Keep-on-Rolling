@@ -796,12 +796,12 @@ GameObject:
   - component: {fileID: 1399797728831867897}
   - component: {fileID: 1399797728831867896}
   m_Layer: 0
-  m_Name: Fish_collect
+  m_Name: Coins_collect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1399797728831867899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e286439aa03d65d4bb7511b3b8a7915e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a094ea2fcddec9c46acab9d7926cb73d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1207,7 +1207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 292.99988, y: -341.99997}
+  m_AnchoredPosition: {x: 305.07, y: -344}
   m_SizeDelta: {x: 1057, y: 178.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1399797729265783247
@@ -1454,7 +1454,7 @@ GameObject:
   - component: {fileID: 1399797729519762271}
   - component: {fileID: 1399797729519762270}
   m_Layer: 0
-  m_Name: Fish_notcollect
+  m_Name: Coins_notcollect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1477,7 +1477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 362, y: -145.99991}
+  m_AnchoredPosition: {x: 358.87988, y: -145.99988}
   m_SizeDelta: {x: 1234.7177, y: 1108.8074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1399797729519762271
@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 21741e810c77b7e4e8129afc0262764a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7b24ca244b696344b5cde58b3bb189f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
