@@ -9,11 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Crusher_Character_Face_Hologram_01
   m_Shader: {fileID: -6465566751694194690, guid: 4e6b36744bf70754e856ce2217ca5753, type: 3}
-  m_ValidKeywords:
-  - _MASK_A
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _ENUM_A
   - _EYE_SHAPE_ROUND
+  - _MASK_A
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: a64f1811dcd1693459e5dae64deb7bd8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_0b17dada36e8457cb4e325a4b509c13f_Texture_1:
         m_Texture: {fileID: 2800000, guid: d184578ca3b0d9a4eae14f0310aff275, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -60,7 +64,7 @@ Material:
     - _BOOLEAN: 0
     - _ENUM: 0
     - _EYE_SHAPE: 0
-    - _Emission_Intensity: 0
+    - _Emission_Intensity: 7
     - _Emission_Strength: 3.67
     - _Eye_Size: 0.1
     - _Frequenz: 7
@@ -88,7 +92,7 @@ Material:
     - _Base_Color: {r: 0.16660735, g: 0.613929, b: 0.9056604, a: 1}
     - _Color1: {r: 0.98039216, g: 0.5627324, b: 0.07843135, a: 1}
     - _Color2: {r: 0.7254902, g: 0.52065563, b: 0.12156862, a: 1}
-    - _Emission_Color: {r: 0.7647059, g: 0.5706998, b: 0.2117647, a: 1}
+    - _Emission_Color: {r: 0.8679245, g: 0.63317376, b: 0.19241722, a: 1}
     - _Fresnel_Color: {r: 0.99215686, g: 0.4323119, b: 0, a: 1}
     - _Hologram_Base_Color: {r: 0.67661285, g: 0.33333337, b: 1, a: 1}
     - _Hologram_Tiling: {r: 0, g: 4, b: 0, a: 0}
