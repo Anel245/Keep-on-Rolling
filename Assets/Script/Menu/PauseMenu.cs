@@ -90,6 +90,11 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         Application.Quit();
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void GoToMainMenu()
     {
         //TODO place Main Menu music
