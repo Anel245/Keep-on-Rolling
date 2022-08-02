@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TimerManager : MonoBehaviour
     private float startTime;
     private float EndTime;
     private bool finnished = false;
+    public float t;
     
 
     void Start()
@@ -41,7 +43,7 @@ public class TimerManager : MonoBehaviour
         else
         {
 
-        float t = Time.time - startTime;
+        t = Time.time - startTime;
 
         string minutes = ((int)t / 60).ToString();
         string seconds = (t % 60).ToString("f1");
@@ -53,6 +55,10 @@ public class TimerManager : MonoBehaviour
     public void Finnish()
     {
         finnished = true;
+        if (t < PlayerPrefs.GetFloat("BestTimeLvl" + SceneManager.GetActiveScene().buildIndex, 100000000))
+        {
+            PlayerPrefs.SetFloat("BestTimeLvl" + SceneManager.GetActiveScene().buildIndex, t);
+        }
         TimerText.color = Color.red;
     }
 

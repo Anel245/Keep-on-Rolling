@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class Score : MonoBehaviour
         {
             AllCollected.SetActive(true);
             NotAllCollected.SetActive(false);
+        }
+        if (theScore > PlayerPrefs.GetInt("HighscoreLvl" + SceneManager.GetActiveScene().buildIndex, 0))
+        {
+            PlayerPrefs.SetInt("HighscoreLvl" + SceneManager.GetActiveScene().buildIndex, theScore);
         }
     }
 
