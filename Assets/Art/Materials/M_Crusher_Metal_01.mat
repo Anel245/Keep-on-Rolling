@@ -21,21 +21,25 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Crusher_Metal_01
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 76bd7c5b31fdc134e87cf1f00f641bd7, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _EYE_SHAPE_ROUND
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Color:
+        m_Texture: {fileID: 2800000, guid: 627378edee65ba34fbf9a193fbe311df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -58,12 +62,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Emission_Map:
+        m_Texture: {fileID: 2800000, guid: 1a1276d976e2bf54c87fd95ba8e25464, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Metallic_und_Smoothness_Map:
+        m_Texture: {fileID: 2800000, guid: cae42c5bef036ab44993ff235bb33c90, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Map:
+        m_Texture: {fileID: 2800000, guid: 22d3e9404ce241848a173c1433935f6e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -74,8 +90,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8ca6d39177a640a2aff22f6494d3857b_Texture_1:
+        m_Texture: {fileID: 2800000, guid: d184578ca3b0d9a4eae14f0310aff275, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_7e40801989934c8cb7159f5d3d935ac8_Out_0:
+        m_Texture: {fileID: 2800000, guid: 848485bc6c4e946438bdde9e58b9a2db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_83423e1808014e248d9dda27639f2987_Out_0:
+        m_Texture: {fileID: 2800000, guid: 18503773e76ba3b4f97d7da3fce375d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -92,6 +120,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_7BEC143C: 0.01
+    - Vector1_A063E5A4: 30
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -102,25 +132,50 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EYE_SHAPE: 0
+    - _Emission_Intensity: 5
+    - _Emission_Strength: 3.67
     - _EnvironmentReflections: 1
+    - _Frequenz: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Hologram_Speed: 0.1
+    - _L_Eye_Pupil_Size: 0.05
+    - _L_Eye_Size: 0.1
     - _Metallic: 0.5
+    - _Metallic_Strength: 0.95
+    - _Noise_Mask_Scale: 20
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
+    - _R_Eye_Pupil_Size: 0.05
+    - _R_Eye_Size: 0.1
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Smoothness_Strenghth: 0.3
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _dissolveGrade: -1
+    - _test1: 0.1
+    - _test2: 0.4
     m_Colors:
+    - Color_4A93D115: {r: 2, g: 0.3372549, b: 0, a: 0}
     - _BaseColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     - _Color: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+    - _Color1: {r: 0.1647059, g: 0.6156863, b: 0.9058824, a: 1}
+    - _Color2: {r: 0, g: 0.6084657, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Emission_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Fresnel_Color: {r: 0, g: 0.9911022, b: 0.9822509, a: 1}
+    - _Hologram_Base_Color: {r: 0, g: 1, b: 1, a: 1}
+    - _Hologram_Tiling: {r: 0, g: 3, b: 0, a: 0}
+    - _L_Eye_Position: {r: 0.25, g: 0.5, b: 0, a: 0}
+    - _R_Eye_Position: {r: 0.75, g: 0.5, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
