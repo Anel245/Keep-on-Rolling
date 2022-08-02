@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class Special : MonoBehaviour
     public GameObject CollectedIcon;
     public GameObject NotCollectedIcon;
     public AudioManager audioManager;
+
+    public MMF_Player collectFeedback;
 
     private void Awake()
     {
@@ -21,7 +24,8 @@ public class Special : MonoBehaviour
         CollectedIcon.SetActive(true);
         NotCollectedIcon.SetActive(false);
         audioManager.Spec_Collectible();
-        Destroy(gameObject);
+        collectFeedback.PlayFeedbacks();
+        //Destroy(gameObject);
     }
 
     private void Update()
