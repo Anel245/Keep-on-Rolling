@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
 {
@@ -14,6 +15,9 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
     public GameObject pauseMenuUI;
     private Ball_Controlls controlls;
     public AudioManager audioManager;
+    public Button FirstSelectedButton;
+
+    public string Inputdevice;
     //BackgroundMusicManager Music;
     //SoundManager Sound;
     //Story story;
@@ -40,6 +44,7 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
     {
         if (context.started)
         {
+            Inputdevice = context.control.device.name;
             if (WinScreen.activeSelf == false)
             {
                 if (GameIsPaused)
@@ -77,8 +82,15 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
     {
         pauseMenuUI.SetActive(true);
         PlayerUI.SetActive(false);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        if (Inputdevice == "Keyboard")
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            FirstSelectedButton.Select();
+        }
         Time.timeScale = 0f;
         GameIsPaused = true;
         audioManager.BallRollingStop();

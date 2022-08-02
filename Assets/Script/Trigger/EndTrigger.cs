@@ -24,6 +24,7 @@ public class EndTrigger : MonoBehaviour
         timerManager.Finnish();
         audioManager.BallRollingStop();
         audioManager.FinishLevel();
+
         //TimerText.text.SetActive(true);
         //GameObject.Find("Player").SendMessage("Finnish");
     }
