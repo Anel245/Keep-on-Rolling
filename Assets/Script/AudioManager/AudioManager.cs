@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     
     private FMOD.Studio.EventInstance BallRollingInstance;
     private FMOD.Studio.EventInstance AmbientSkyInstance;
+    private FMOD.Studio.EventInstance MusicInstance;
     private FMOD.Studio.Bus EnvEmittersBus;
 
 
@@ -26,6 +27,7 @@ public class AudioManager : MonoBehaviour
     {
         AmbientSkyInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/AmbientSky");
         EnvEmittersBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX/EnvEmitters");
+        MusicInstance = FMODUnity.RuntimeManager.CreateInstance("bus:/SFX/Music");
 
         //AmbientSkyStart();
     }
@@ -129,6 +131,7 @@ public class AudioManager : MonoBehaviour
     public void BallRollingSpeedUpdate(float BallSpeed)
     {
         BallRollingInstance.setParameterByName("Speed", BallSpeed);
+        MusicInstance.setParameterByName("Speed", BallSpeed);
     }
 
     // End of Environment Emitters ------------------------------------------------------------------
@@ -142,15 +145,6 @@ public class AudioManager : MonoBehaviour
     public void BallImpact(Vector3 BallPosition)
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/3D/Ball_Impact", BallPosition);
-    }
-
-    public void AmbientSkyStart()
-    {
-        AmbientSkyInstance.start();
-    }
-    public void AmbientSkyStop()
-    {
-        AmbientSkyInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void Bounce(Vector3 BallPosition)
@@ -196,6 +190,24 @@ public class AudioManager : MonoBehaviour
     public void FinishLevel()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Finish_Level");
+    }
+
+    public void AmbientSkyStart()
+    {
+        AmbientSkyInstance.start();
+    }
+    public void AmbientSkyStop()
+    {
+        AmbientSkyInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void MusicStart()
+    {
+        MusicInstance.start();
+    }
+    public void MusicStop()
+    {
+        MusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
 
