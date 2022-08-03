@@ -77,34 +77,34 @@ public class AudioManager : MonoBehaviour
     }
    */
 
-    public void FlyingCarInitialize(Transform FlyingCarTransform, Rigidbody FlyingCarRigidbody)
+    public void FlyingCarInitialize(GameObject FlyingCar)
     {
         FMOD.Studio.EventInstance FlyingCarInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Flying_Car");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(FlyingCarInstance, FlyingCarTransform, FlyingCarRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(FlyingCarInstance, FlyingCar.transform, FlyingCar.GetComponent<Rigidbody>());
         FlyingCarInstance.start();
         FlyingCarInstance.release();
     }
 
-    public void HologramInitialize(Transform HologramTransform, Rigidbody HologramRigidbody)
+    public void HologramInitialize(GameObject Hologram)
     {
         FMOD.Studio.EventInstance HologramInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Hologram");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(HologramInstance, HologramTransform, HologramRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(HologramInstance, Hologram.transform, Hologram.GetComponent<Rigidbody>());
         HologramInstance.start();
         HologramInstance.release();
     }
 
-    public void VentilationInitialize(Transform VentilationTransform, Rigidbody VentilationRigidbody)
+    public void VentilationInitialize(GameObject Ventilation)
     {
         FMOD.Studio.EventInstance VentilationInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Ventilation");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(VentilationInstance, VentilationTransform, VentilationRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(VentilationInstance, Ventilation.transform, Ventilation.GetComponent<Rigidbody>());
         VentilationInstance.start();
         VentilationInstance.release();
     }
 
-    public void SparkingCableInitialize(Transform SparkingCableTransform, Rigidbody SparkingCableRigidbody)
+    public void SparkingCableInitialize(GameObject SparkingCable)
     {
         FMOD.Studio.EventInstance SparkingCableInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Sparking_Cable");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(SparkingCableInstance, SparkingCableTransform, SparkingCableRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(SparkingCableInstance, SparkingCable.transform, SparkingCable.GetComponent<Rigidbody>());
         SparkingCableInstance.start();
         SparkingCableInstance.release();
     }
