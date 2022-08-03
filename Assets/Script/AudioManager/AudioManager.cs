@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
     {
         AmbientSkyInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/AmbientSky");
         EnvEmittersBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX/EnvEmitters");
-        MusicInstance = FMODUnity.RuntimeManager.CreateInstance("bus:/SFX/Music");
+        MusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/Music");
 
         //AmbientSkyStart();
     }
