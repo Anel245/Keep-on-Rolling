@@ -67,23 +67,6 @@ public class AudioManager : MonoBehaviour
         //EnemyMoveInstances.Add(EnemyMoveInstance);
     }
 
-   /*
-    public void EnemyMovesStart()
-    {
-        foreach (var Instance in EnemyMoveInstances)
-        {
-            Instance.start();
-        }
-    }
-   
-    public void EnemyMovesStop()
-    {
-        foreach (var Instance in EnemyMoveInstances)
-        {
-            Instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
-    }
-   */
 
     public void FlyingCarInitialize(GameObject FlyingCar)
     {
@@ -119,8 +102,17 @@ public class AudioManager : MonoBehaviour
 
     public void StopAllEnvEmitters()
     {
-        //Stops all instances of EnemyMove, FlyingCar, Hologram, Ventilation, SparkingCable
+        //Stops all instances of EnemyMove, FlyingCar, Hologram, Ventilation, SparkingCable, BallRolling
         EnvEmittersBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void PauseMenu()
+    {
+        EnvEmittersBus.setPaused(true);
+    }
+    public void UnPauseMenu()
+    {
+        EnvEmittersBus.setPaused(false);
     }
 
     public void BallRollingInitialize(Transform Balltransform, Rigidbody BallRigidbody)
