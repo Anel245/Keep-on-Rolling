@@ -134,13 +134,15 @@ public class AudioManager : MonoBehaviour
         MusicInstance.setParameterByName("Speed", BallSpeed);
     }
 
-    // End of Environment Emitters ------------------------------------------------------------------
-
-
     public void BallRollingStop()
     {
         BallRollingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
+
+
+    // End of Environment Emitters ------------------------------------------------------------------
+
+
 
     public void BallImpact(Vector3 BallPosition)
     {
