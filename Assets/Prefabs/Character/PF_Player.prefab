@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1929578080889084626}
   - component: {fileID: 1212574473980860086}
   - component: {fileID: 8922751027685753463}
+  - component: {fileID: -1099881525674975880}
   m_Layer: 0
   m_Name: PF_Player
   m_TagString: Player
@@ -65,6 +66,9 @@ MonoBehaviour:
   RollingPlaying: 0
   MaxSpeed: 60
   jumpFeedback: {fileID: 0}
+  sausageCollisionFeedback: {fileID: 0}
+  landingFeedback: {fileID: 0}
+  dustTrail: {fileID: 0}
 --- !u!54 &1929578080889084627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,6 +143,19 @@ MonoBehaviour:
   deathFeedback: {fileID: 0}
   deathFeedbackActive: 0
   audioManager: {fileID: 0}
+--- !u!114 &-1099881525674975880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929578080889084625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69045db7bb747f249938b8e45dcda328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
 --- !u!1001 &707724937687552730
 PrefabInstance:
   m_ObjectHideFlags: 0
