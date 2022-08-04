@@ -205,8 +205,12 @@ public class AudioManager : MonoBehaviour
 
     public void MusicStart()
     {
-        MusicInstance.start();
+        if (EventIsNotPlaying(MusicInstance))
+        {
+            MusicInstance.start();
+        }
     }
+
     public void MusicStop()
     {
         MusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -226,6 +230,13 @@ public class AudioManager : MonoBehaviour
     public void MusicSetLevel(int SetLevel)
     {
         MusicInstance.setParameterByName("Level", SetLevel);
+    }
+
+    bool EventIsNotPlaying(FMOD.Studio.EventInstance instance)
+    {
+        FMOD.Studio.PLAYBACK_STATE state;
+        instance.getPlaybackState(out state);
+        return state != FMOD.Studio.PLAYBACK_STATE.PLAYING;
     }
 
     void Update()
