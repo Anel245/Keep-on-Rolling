@@ -5037,6 +5037,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -19.60425
       objectReference: {fileID: 0}
+    - target: {fileID: 6049519390895924006, guid: d446bd609bc85c54186d09a018923995, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9757411
+      objectReference: {fileID: 0}
     - target: {fileID: 6049519390895924007, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5084,6 +5088,14 @@ PrefabInstance:
     - target: {fileID: 6049519390970392650, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.015117697
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049519390970392653, guid: d446bd609bc85c54186d09a018923995, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9757411
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049519391866662508, guid: d446bd609bc85c54186d09a018923995, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.9757411
       objectReference: {fileID: 0}
     - target: {fileID: 6049519391866662509, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20259,7 +20271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1737693866460287012
 RectTransform:
   m_ObjectHideFlags: 0
