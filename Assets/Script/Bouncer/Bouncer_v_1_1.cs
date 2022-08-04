@@ -20,6 +20,7 @@ public class Bouncer_v_1_1 : MonoBehaviour
         {
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
+        Player = FindObjectOfType<Ball_Movement_1_4>().gameObject;
     }
 
     private void Update()

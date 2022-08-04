@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     
     private FMOD.Studio.EventInstance BallRollingInstance;
     private FMOD.Studio.EventInstance AmbientSkyInstance;
+    private FMOD.Studio.EventInstance MusicInstance;
     private FMOD.Studio.Bus EnvEmittersBus;
 
 
@@ -17,7 +18,15 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        
         DontDestroyOnLoad(gameObject);
 
     }
@@ -26,8 +35,9 @@ public class AudioManager : MonoBehaviour
     {
         AmbientSkyInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/AmbientSky");
         EnvEmittersBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX/EnvEmitters");
+        MusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/Music");
 
-        //AmbientSkyStart();
+        AmbientSkyStart();
     }
 
     public void Button_Click()
@@ -57,60 +67,52 @@ public class AudioManager : MonoBehaviour
         //EnemyMoveInstances.Add(EnemyMoveInstance);
     }
 
-   /*
-    public void EnemyMovesStart()
-    {
-        foreach (var Instance in EnemyMoveInstances)
-        {
-            Instance.start();
-        }
-    }
-   
-    public void EnemyMovesStop()
-    {
-        foreach (var Instance in EnemyMoveInstances)
-        {
-            Instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
-    }
-   */
 
-    public void FlyingCarInitialize(Transform FlyingCarTransform, Rigidbody FlyingCarRigidbody)
+    public void FlyingCarInitialize(GameObject FlyingCar)
     {
         FMOD.Studio.EventInstance FlyingCarInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Flying_Car");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(FlyingCarInstance, FlyingCarTransform, FlyingCarRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(FlyingCarInstance, FlyingCar.transform, FlyingCar.GetComponent<Rigidbody>());
         FlyingCarInstance.start();
         FlyingCarInstance.release();
     }
 
-    public void HologramInitialize(Transform HologramTransform, Rigidbody HologramRigidbody)
+    public void HologramInitialize(GameObject Hologram)
     {
         FMOD.Studio.EventInstance HologramInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Hologram");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(HologramInstance, HologramTransform, HologramRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(HologramInstance, Hologram.transform, Hologram.GetComponent<Rigidbody>());
         HologramInstance.start();
         HologramInstance.release();
     }
 
-    public void VentilationInitialize(Transform VentilationTransform, Rigidbody VentilationRigidbody)
+    public void VentilationInitialize(GameObject Ventilation)
     {
         FMOD.Studio.EventInstance VentilationInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Ventilation");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(VentilationInstance, VentilationTransform, VentilationRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(VentilationInstance, Ventilation.transform, Ventilation.GetComponent<Rigidbody>());
         VentilationInstance.start();
         VentilationInstance.release();
     }
 
-    public void SparkingCableInitialize(Transform SparkingCableTransform, Rigidbody SparkingCableRigidbody)
+    public void SparkingCableInitialize(GameObject SparkingCable)
     {
         FMOD.Studio.EventInstance SparkingCableInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Sparking_Cable");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(SparkingCableInstance, SparkingCableTransform, SparkingCableRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(SparkingCableInstance, SparkingCable.transform, SparkingCable.GetComponent<Rigidbody>());
         SparkingCableInstance.start();
         SparkingCableInstance.release();
     }
 
     public void StopAllEnvEmitters()
     {
-        //Stops all instances of EnemyMove, FlyingCar, Hologram, Ventilation, SparkingCable
+        //Stops all instances of EnemyMove, FlyingCar, Hologram, Ventilation, SparkingCable, BallRolling
         EnvEmittersBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void PauseMenu()
+    {
+        EnvEmittersBus.setPaused(true);
+    }
+    public void UnPauseMenu()
+    {
+        EnvEmittersBus.setPaused(false);
     }
 
     public void BallRollingInitialize(Transform Balltransform, Rigidbody BallRigidbody)
@@ -129,28 +131,22 @@ public class AudioManager : MonoBehaviour
     public void BallRollingSpeedUpdate(float BallSpeed)
     {
         BallRollingInstance.setParameterByName("Speed", BallSpeed);
+        MusicInstance.setParameterByName("Speed", BallSpeed);
     }
-
-    // End of Environment Emitters ------------------------------------------------------------------
-
 
     public void BallRollingStop()
     {
         BallRollingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
+
+    // End of Environment Emitters ------------------------------------------------------------------
+
+
+
     public void BallImpact(Vector3 BallPosition)
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/3D/Ball_Impact", BallPosition);
-    }
-
-    public void AmbientSkyStart()
-    {
-        AmbientSkyInstance.start();
-    }
-    public void AmbientSkyStop()
-    {
-        AmbientSkyInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void Bounce(Vector3 BallPosition)
@@ -196,6 +192,24 @@ public class AudioManager : MonoBehaviour
     public void FinishLevel()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/2D/Finish_Level");
+    }
+
+    public void AmbientSkyStart()
+    {
+        AmbientSkyInstance.start();
+    }
+    public void AmbientSkyStop()
+    {
+        AmbientSkyInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void MusicStart()
+    {
+        MusicInstance.start();
+    }
+    public void MusicStop()
+    {
+        MusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
 

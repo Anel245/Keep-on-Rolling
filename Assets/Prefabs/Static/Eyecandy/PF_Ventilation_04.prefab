@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6207083714554776328}
   - component: {fileID: 7029035265992246445}
   - component: {fileID: 5073534901999480935}
+  - component: {fileID: -8702570013596009649}
   m_Layer: 0
   m_Name: PF_Ventilation_04
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-8702570013596009649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730679588803187122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130403bf435e57c4f92a83488dc93f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsCar: 0
+  IsVent: 1
+  IsHolo: 0
+  IsCable: 0

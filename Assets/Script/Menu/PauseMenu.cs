@@ -74,7 +74,8 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         GameIsPaused = false;
-        audioManager.BallRollingStart(transform, new Rigidbody());
+        //audioManager.BallRollingStart(transform, new Rigidbody());
+        audioManager.UnPauseMenu();
         //audioManager.EnemyMovesStart();
     }
 
@@ -93,7 +94,8 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         }
         Time.timeScale = 0f;
         GameIsPaused = true;
-        audioManager.BallRollingStop();
+        //audioManager.BallRollingStop();
+        audioManager.PauseMenu();
         //audioManager.EnemyMovesStop();
     }
 

@@ -22,7 +22,7 @@ public class EndTrigger : MonoBehaviour
     {
         gameManager.CompleteLevel();
         timerManager.Finnish();
-        audioManager.BallRollingStop();
+        audioManager.StopAllEnvEmitters();
         audioManager.FinishLevel();
 
         //TimerText.text.SetActive(true);
