@@ -49,7 +49,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
     public MMF_Player jumpFeedback;
     public MMF_Player sausageCollisionFeedback;
     public MMF_Player landingFeedback;
-    public ParticleSystem dustTrail;
+    public GameObject dustTrail;
 
     private void Awake()
     {
@@ -104,7 +104,7 @@ public class Ball_Movement_1_4 : MonoBehaviour, Ball_Controlls.IBall_ControlsAct
             }
             Grounded = true;
             dustTrail.gameObject.transform.position = this.gameObject.transform.position;
-            dustTrail.gameObject.transform.position += new Vector3(0, -0.5f, 0);
+            dustTrail.gameObject.transform.position += new Vector3(0, -0.6f, 0);
             dustTrail.gameObject.SetActive(true);
             //dustTrail.gameObject.transform.position.y = -0.5;
 
