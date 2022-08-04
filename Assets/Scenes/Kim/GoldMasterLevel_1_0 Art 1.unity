@@ -5151,6 +5151,10 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key2.r
       value: 0.28985023
       objectReference: {fileID: 0}
+    - target: {fileID: 5518036372888217492, guid: d446bd609bc85c54186d09a018923995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6049519390761600449, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9589667
@@ -5197,19 +5201,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6049519390970392650, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9835249
+      value: 0.9834811
       objectReference: {fileID: 0}
     - target: {fileID: 6049519390970392650, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15094705
+      value: 0.15123264
       objectReference: {fileID: 0}
     - target: {fileID: 6049519390970392650, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.098316275
+      value: -0.09831188
       objectReference: {fileID: 0}
     - target: {fileID: 6049519390970392650, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.015089146
+      value: 0.015117694
       objectReference: {fileID: 0}
     - target: {fileID: 6049519391866662509, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5221,19 +5225,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6049519391866662509, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98581636
+      value: 0.985738
       objectReference: {fileID: 0}
     - target: {fileID: 6049519391866662509, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13517515
+      value: 0.13574591
       objectReference: {fileID: 0}
     - target: {fileID: 6049519391866662509, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.09854532
+      value: -0.0985375
       objectReference: {fileID: 0}
     - target: {fileID: 6049519391866662509, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.013512534
+      value: 0.0135695925
       objectReference: {fileID: 0}
     - target: {fileID: 9199567905169660612, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_Name
@@ -5297,19 +5301,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9199567905317015016, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9835249
+      value: 0.9834811
       objectReference: {fileID: 0}
     - target: {fileID: 9199567905317015016, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15094705
+      value: 0.15123266
       objectReference: {fileID: 0}
     - target: {fileID: 9199567905317015016, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.098316275
+      value: -0.09831188
       objectReference: {fileID: 0}
     - target: {fileID: 9199567905317015016, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.015089146
+      value: 0.015117696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d446bd609bc85c54186d09a018923995, type: 3}
@@ -5587,6 +5591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XSensitivitySlider: {fileID: 1958014528}
   YSensitivitySlider: {fileID: 74524316}
+  Playermovescript: {fileID: 0}
 --- !u!1001 &652538950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6217,6 +6222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 1880636204}
   highScore: {fileID: 347980017}
+  t: 0
 --- !u!4 &768903002
 Transform:
   m_ObjectHideFlags: 0
@@ -11186,6 +11192,8 @@ MonoBehaviour:
   PlayerUI: {fileID: 716833644}
   pauseMenuUI: {fileID: 652062936}
   audioManager: {fileID: 0}
+  FirstSelectedButton: {fileID: 0}
+  Inputdevice: 
 --- !u!1 &1299450760
 GameObject:
   m_ObjectHideFlags: 0
