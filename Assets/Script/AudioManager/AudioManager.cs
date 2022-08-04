@@ -212,6 +212,21 @@ public class AudioManager : MonoBehaviour
         MusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
+    /// <summary>
+    /// Sets Level for the music event
+    /// </summary>
+    /// <param name="SetLevel">
+    /// 0=Menu 
+    /// 1=Level_1
+    /// 2=Level_2
+    /// 3=Level_3
+    /// 4=Level_4
+    /// 10=Credits
+    /// </param>
+    public void MusicSetLevel(int SetLevel)
+    {
+        MusicInstance.setParameterByName("Level", SetLevel);
+    }
 
     void Update()
     {
