@@ -64,7 +64,6 @@ public class AudioManager : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(EnemyMoveInstance, EnemyTransform, EnemyRigidbody);
         EnemyMoveInstance.start();
         EnemyMoveInstance.release();
-        //EnemyMoveInstances.Add(EnemyMoveInstance);
     }
 
 
@@ -86,10 +85,10 @@ public class AudioManager : MonoBehaviour
 
     public void VentilationInitialize(GameObject Ventilation)
     {
-        FMOD.Studio.EventInstance VentilationInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Ventilation");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(VentilationInstance, Ventilation.transform, Ventilation.GetComponent<Rigidbody>());
-        VentilationInstance.start();
-        VentilationInstance.release();
+        //FMOD.Studio.EventInstance VentilationInstance = FMODUnity.RuntimeManager.CreateInstance("event:/3D/Ventilation");
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(VentilationInstance, Ventilation.transform, Ventilation.GetComponent<Rigidbody>());
+        //VentilationInstance.start();
+        //VentilationInstance.release();
     }
 
     public void SparkingCableInitialize(GameObject SparkingCable)

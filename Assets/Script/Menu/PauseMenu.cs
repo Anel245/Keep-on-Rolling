@@ -107,6 +107,7 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        audioManager.StopAllEnvEmitters();
     }
 
     public void GoToMainMenu()
@@ -115,6 +116,7 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         //BackgroundMusicManager.Instance.PlaySound("MainMenu");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        audioManager.StopAllEnvEmitters();
     }
 
     public void Button_Click()
