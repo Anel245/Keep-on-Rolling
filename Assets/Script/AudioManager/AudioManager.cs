@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     private FMOD.Studio.EventInstance AmbientSkyInstance;
     private FMOD.Studio.EventInstance MusicInstance;
     private FMOD.Studio.Bus EnvEmittersBus;
+    private FMOD.Studio.Bus MusicBus;
+    private FMOD.Studio.Bus SFXBus;
 
 
     // private FMOD.Studio.EventInstance EnemyMoveInstance;
@@ -35,6 +37,8 @@ public class AudioManager : MonoBehaviour
     {
         AmbientSkyInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/AmbientSky");
         EnvEmittersBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX/EnvEmitters");
+        MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+        SFXBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
         MusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/Music");
 
         AmbientSkyStart();
@@ -236,6 +240,16 @@ public class AudioManager : MonoBehaviour
         FMOD.Studio.PLAYBACK_STATE state;
         instance.getPlaybackState(out state);
         return state != FMOD.Studio.PLAYBACK_STATE.PLAYING;
+    }
+
+    public void MusicBusSetVolume(float volume)
+    {
+        MusicBus.setVolume(volume);
+    }
+
+    public void SFXBusSetVolume(float volume)
+    {
+        SFXBus.setVolume(volume);
     }
 
     void Update()
