@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10919,6 +10919,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 560219870240655718, guid: b2fd825a3ea297f4287c4c931c8120d6, type: 3}
   m_PrefabInstance: {fileID: 1031900669}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1040966403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3822001332980779206, guid: d446bd609bc85c54186d09a018923995, type: 3}
+  m_PrefabInstance: {fileID: 1044149735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1041249325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10987,17 +10998,25 @@ PrefabInstance:
       propertyPath: Fallheight
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6049519390761600448, guid: d446bd609bc85c54186d09a018923995, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 35.01017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049519390761600448, guid: d446bd609bc85c54186d09a018923995, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.1525097
+      objectReference: {fileID: 0}
     - target: {fileID: 6049519390761600449, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9589667
+      value: -5.9731884
       objectReference: {fileID: 0}
     - target: {fileID: 6049519390761600449, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: -58.57
       objectReference: {fileID: 0}
     - target: {fileID: 6049519390761600449, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.60425
+      value: 68.98262
       objectReference: {fileID: 0}
     - target: {fileID: 6049519390895924007, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19883,6 +19902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 3
       objectReference: {fileID: 0}
+    - target: {fileID: 737698460787289951, guid: 648f6bd0bbf6f8a428a0cfcf5a42fdd5, type: 3}
+      propertyPath: checkpointPlayerFeedback
+      value: 
+      objectReference: {fileID: 1040966403}
     - target: {fileID: 2546174838520163481, guid: 648f6bd0bbf6f8a428a0cfcf5a42fdd5, type: 3}
       propertyPath: m_LocalPosition.y
       value: -59.169384

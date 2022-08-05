@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interactor : MonoBehaviour
 {   
     [SerializeField]
-    float radius;
+    public float radius;
 
     // Update is called once per frame
     void Update()
