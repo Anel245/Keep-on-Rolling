@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public float restartDelay = 1f;
     public GameObject completeGameUI;
     public Button SelectedEndscreenButton;
+    public Ball_Movement_1_4 Player;
+    public CinemachineFreeLook CinemachineCam;
 
     private void Awake()
     {
@@ -21,7 +24,11 @@ public class GameManager : MonoBehaviour
         completeGameUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        Player = FindObjectOfType<Ball_Movement_1_4>();
+        Player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        CinemachineCam = FindObjectOfType<CinemachineFreeLook>();
+        CinemachineCam.gameObject.SetActive(false);
         SelectedEndscreenButton.Select();
     }
 
