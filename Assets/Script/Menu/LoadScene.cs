@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-
+    private AudioManager audioManager;
     public int ScenenBuildIndex;
+
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     public void loadscene()
     {
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        if (ScenenBuildIndex == 0)
+            audioManager.MusicStop();
         SceneManager.LoadSceneAsync(ScenenBuildIndex);
     }
 }
