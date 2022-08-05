@@ -117,7 +117,7 @@ public class PauseMenu : MonoBehaviour, Ball_Controlls.IBall_ControlsActions
         Time.timeScale = 1f;
         audioManager.StopAllEnvEmitters();
         SceneManager.LoadSceneAsync(0);
-        audioManager.MusicStop();
+        audioManager.MusicSetLevel(0);
     }
 
     public void Button_Click()

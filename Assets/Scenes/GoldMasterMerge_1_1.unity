@@ -5498,10 +5498,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 322170703962310358, guid: d446bd609bc85c54186d09a018923995, type: 3}
-      propertyPath: Fallheight
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 6049519390761600448, guid: d446bd609bc85c54186d09a018923995, type: 3}
       propertyPath: m_Lens.FieldOfView
       value: 69.96538
@@ -13266,27 +13262,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1941608904}
-  - component: {fileID: 1941608903}
+  - component: {fileID: 1941608905}
   m_Layer: 0
-  m_Name: MusicStarter
+  m_Name: MusicSetter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1941608903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941608902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a8cdb262b1ad44c9c84535916c6094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
 --- !u!4 &1941608904
 Transform:
   m_ObjectHideFlags: 0
@@ -13302,6 +13285,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 98
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1941608905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941608902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6431cdfd33d9e942a4ece0a8af2c5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  MusicLevel: 1
 --- !u!1001 &1981711462
 PrefabInstance:
   m_ObjectHideFlags: 0

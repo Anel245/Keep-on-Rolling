@@ -16,7 +16,7 @@ public class LoadScene : MonoBehaviour
     public void loadscene()
     {
         if (ScenenBuildIndex == 0)
-            audioManager.MusicStop();
+            audioManager.MusicSetLevel(0);
         SceneManager.LoadSceneAsync(ScenenBuildIndex);
     }
 }

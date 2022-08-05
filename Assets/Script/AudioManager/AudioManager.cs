@@ -42,6 +42,7 @@ public class AudioManager : MonoBehaviour
         MusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/2D/Music");
 
         AmbientSkyStart();
+        MusicStart();
     }
 
     public void Button_Click()
@@ -216,7 +217,7 @@ public class AudioManager : MonoBehaviour
 
     public void MusicStop()
     {
-        MusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //MusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     /// <summary>
