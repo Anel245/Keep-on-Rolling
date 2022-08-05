@@ -25,7 +25,7 @@ public class Score : MonoBehaviour
 
     void Update ()
     {
-        ScoreText.text = "Score: " + theScore;
+        ScoreText.text = "" + theScore;
         FinalScoreText.text = theScore + "/" + MaxScore;
 
         if (Counting)

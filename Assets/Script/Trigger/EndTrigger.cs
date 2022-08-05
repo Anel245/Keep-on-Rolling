@@ -23,7 +23,7 @@ public class EndTrigger : MonoBehaviour
         gameManager.CompleteLevel();
         timerManager.Finnish();
         audioManager.StopAllEnvEmitters();
-        audioManager.FinishLevel();
+        audioManager.Spec_Collectible();
 
         //TimerText.text.SetActive(true);
         //GameObject.Find("Player").SendMessage("Finnish");
